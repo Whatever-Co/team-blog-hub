@@ -56,15 +56,6 @@ export const members: Member[] = [
     githubUsername: "kidapu",
   },
   {
-    id: "murasaqi",
-    name: "murasaqi",
-    role: "Visual Artist, Programmer",
-    avatarSrc: "/avatars/murasaqi.jpg",
-    sources: ["https://qiita-feed.saqoosha.workers.dev/Murasaqi", "https://zenn.dev/murasaqi/feed?include_scraps=1"],
-    twitterUsername: "murasaki_0606",
-    githubUsername: "murasaqi",
-  },
-  {
     id: "migifun",
     name: "Takashi Okada",
     role: "Engineer",
