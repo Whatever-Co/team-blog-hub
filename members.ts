@@ -79,7 +79,7 @@ export const members: Member[] = [
     role: "Engineer",
     bio: "",
     avatarSrc: "/avatars/genkitoyama.jpg",
-    sources: ["https://qiita-feed.saqoosha.workers.dev/genkitoyama"],
+    sources: ["https://qiita-feed.saqoosha.workers.dev/genkitoyama", "https://zenn.dev/genkitoyama/feed?include_scraps=1"],
     githubUsername: "genkitoyama",
     twitterUsername: "genkitoyama",
   },
