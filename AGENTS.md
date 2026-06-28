@@ -12,7 +12,7 @@ Whatever Co. のエンジニア各自のブログ（Zenn / Qiita / note 等）�
 - `output: 'export'` + `trailingSlash: true` で完全静的化
 - Cloudflare Workers + `[assets]` binding（`./out` を配信）
 - 同じ Worker の `scheduled` handler が日次 cron で Deploy Hook を POST
-- ビルドパイプライン: `pnpm prebuild` → `build:posts`（RSS 取得 → `.contents/posts.json`）→ `build:feeds`（RSS 2.0 + Atom 生成）→ `next build`
+- ビルドパイプライン: `pnpm prebuild` → `build:posts`（Zenn/note は RSS、Qiita は REST API → `.contents/posts.json`）→ `build:feeds`（RSS 2.0 + Atom 生成）→ `next build`
 - ビルド時生成物（`.contents/`, `public/feed.xml`, `public/feed.atom`）は **gitignored**。コミットしない
 
 ## コマンド
@@ -21,7 +21,7 @@ Whatever Co. のエンジニア各自のブログ（Zenn / Qiita / note 等）�
 ```bash
 pnpm install
 pnpm build:posts                                   # RSS fetch（要ネット）
-pnpm test                                          # Vitest（11 tests）
+pnpm test                                          # Vitest（23 tests）
 pnpm exec tsc --noEmit                             # 型チェック (= pnpm lint)
 SITE_ORIGIN=https://team-blog-hub.whatever-co.workers.dev pnpm build
                                                    # 本番と同じ origin で静的 export
@@ -144,8 +144,12 @@ RSS feeds → scripts/build-posts.ts → .contents/posts.json
 
 ## データの意味論
 
-- `members.ts` — メンバー定義。`sources`（RSS URL の配列）と `includeUrlRegex` / `excludeUrlRegex`（オプション）で記事を絞る。`members.ts` は trusted 入力扱い（コミッター制御下）
+- `members.ts` — メンバー定義。`sources`（フィード URL の配列）と `includeUrlRegex` / `excludeUrlRegex`（オプション）で記事を絞る。`members.ts` は trusted 入力扱い（コミッター制御下）
+- `sources` 内の `https://qiita.com/<user>/feed` 形式 URL は `build-posts.ts` の `qiitaUserFromFeedUrl` で検出され、**RSS パーサではなく Qiita REST API** (`https://qiita.com/api/v2/users/<user>/items`) 経由でフル履歴を取得する。それ以外（zenn.dev / note.com / その他）は `rss-parser` がそのまま fetch
+- Qiita API レスポンスは `per_page=100&page=N` でページネーション、`page` を 1 から増やして配列長が `per_page` 未満になったら停止。safety cap は 10 ページ (1000 件)
+- Qiita の `contentSnippet` は `rendered_body`（HTML）からタグを剥がして 200 文字。`body` は Markdown なので `#`/`[text](url)`/コードフェンスがそのまま入って汚い → `rendered_body` 優先で fallback が `body`
 - `.contents/posts.json` — ビルド時生成。`PostItem[]`、日付降順
+- `PostItem.contentSnippet` は出力フィード（`public/feed.{xml,atom}`）の `<description>` だけに使われる。**サイト UI（`PostList` / `PostRow`）は title と date しか表示しない**
 - `PostItem.sourceHost` — `link` の hostname から `www.` を 1 段だけ literal に剥がした値（`www2.example.com` は変換しない）。`normalizeFeedItem` 内で `parsed.hostname` を再利用して生成
 - `PostItem.dateMiliSeconds` — `isoDate` が missing / NaN の post は `normalizeFeedItem` が `null` を返して捨てる。`0` で残すと feed の `<pubDate>` が 1970-01-01 化して aggregator が古い記事と誤判定する
 - `?author=<id>` クエリ — トップページ `PostList` で記事フィルタ。`useSearchParams` を `<Suspense fallback={null}>` で囲まないと `output: 'export'` のビルドが落ちる
@@ -206,14 +210,27 @@ RSS feeds → scripts/build-posts.ts → .contents/posts.json
 ### dayjs を入れたが結局使わない
 - 過去にあったが今は date 整形は `isoDate.slice(0, 10)` だけで足りるので `pnpm remove dayjs` 済み。今後も入れる必要は基本ない
 
+### Qiita の native Atom feed (`qiita.com/<user>/feed`) は最新 3〜4 件しか返さない
+- 症状: `https://qiita.com/<user>/feed` を `rss-parser` に通すと 1 ユーザーあたり 3〜4 件しか取れず、過去記事が全部消える
+- 原因: Qiita 公式 Atom フィードの仕様（最新ごく少数のみ）。RSS reader 用途には十分だが集約サイトには不足
+- 修正: `scripts/build-posts.ts` の `qiitaUserFromFeedUrl` で `qiita.com/<user>/feed` を検出して REST API (`qiita.com/api/v2/users/<user>/items?per_page=100&page=N`) に切り替えてフル履歴取得
+- 注意: API はトークン無しで **60 req/hour/IP**。現状 Qiita メンバー 7 人 × 最大数ページ = 数十リクエスト/ビルドで十分余裕
+
+### `vi.restoreAllMocks()` は `vi.stubGlobal()` を unstub しない
+- 症状: テスト間で `fetch` のモックがリークして別ファイルのテストが奇妙な挙動になる
+- 原因: Vitest の `restoreAllMocks` は `vi.fn()` / `vi.spyOn()` で作ったモックしか戻さない。`stubGlobal` で差し替えたグローバルは別の関数で戻す必要がある
+- 修正: `afterEach` で `vi.unstubAllGlobals()` を呼ぶ（または `vitest.config.ts` で `test.unstubGlobals: true`）。`restoreAllMocks` と併用して両方戻す
+- 該当: `tests/build-posts.test.ts` の `fetchQiitaItems` describe ブロック
+
 ## 検証で使える基準値
 
-- `pnpm test` → 11 tests passed（2 ファイル: build-posts 7, build-feeds 4）
-- `pnpm build:posts` → 約 140 件前後（2026-06-28 時点で 143、メンバー追加や RSS 拡張で増減）
+- `pnpm test` → 23 tests passed（2 ファイル: build-posts 19, build-feeds 4）
+- `pnpm build:posts` → 約 160〜170 件前後（内訳目安: zenn.dev 60 / note.com 18 / qiita.com 80〜90、メンバーの投稿頻度で変動）
 - `pnpm build` → 16 static pages（`/`, `/about/`, `/members/`, `/members/<id>/` × 8, `/404`, `/sitemap.xml`, `/robots.txt`, あと `_next/*`）
 - Worker bundle: 約 22 KiB（`wrangler deploy --dry-run` 出力）
 - `out/feed.xml` ~ 100 KB / `out/feed.atom` ~ 120 KB
 - `grep -c localhost out/feed.xml out/feed.atom out/sitemap.xml` → 全部 0
+- `[build-posts] Qiita user "<name>" returned 0 items` warning は正常動作（API 経由でハンドル空・退会の検知）。0 件の継続が想定外なら `members.ts` から削除を検討
 
 ## 残タスク
 
