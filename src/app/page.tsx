@@ -1,5 +1,6 @@
+import { Suspense } from "react";
 import { Hero } from "@/components/Hero";
-import { MemberBelt } from "@/components/MemberBelt";
+import { PostList } from "@/components/PostList";
 import { getAllMembers } from "@/lib/members";
 import { getAllPosts } from "@/lib/posts";
 
@@ -9,7 +10,9 @@ export default function HomePage() {
   return (
     <>
       <Hero memberCount={members.length} postCount={posts.length} />
-      <MemberBelt members={members} />
+      <Suspense>
+        <PostList posts={posts} members={members} />
+      </Suspense>
     </>
   );
 }
