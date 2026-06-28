@@ -61,6 +61,87 @@ gh pr view <N> --json mergeable,mergeStateStatus,statusCheckRollup
 
 カスタムドメイン（例: `dev-blog.whatever.co`）は未割当。割り当てるときは `SITE_ORIGIN` を更新して再デプロイ。
 
+## ファイル構造
+
+```
+team-blog-hub/
+├─ members.ts                            # メンバー定義（trusted 入力、ハンドル＋RSS source 配列）
+├─ site.config.ts                        # サイトメタ・ヘッダリンク。siteRoot は SITE_ORIGIN env 優先
+├─ next.config.ts                        # output: 'export', trailingSlash: true, images.unoptimized
+├─ wrangler.toml                         # Worker name + account_id + [assets]./out + cron
+├─ postcss.config.mjs                    # @tailwindcss/postcss だけ
+├─ vitest.config.ts                      # path alias を src/scripts と揃える
+├─ tsconfig.json                         # strict、`src/worker` は exclude（wrangler が別管理）
+│
+├─ scripts/                              # tsx で直接実行されるビルド時スクリプト
+│  ├─ build-posts.ts                     # 全 member の RSS を並列 fetch → .contents/posts.json
+│  └─ build-feeds.ts                     # posts.json → public/feed.xml + public/feed.atom
+│
+├─ src/
+│  ├─ types.ts                           # Member, PostItem (sourceHost 必須)
+│  │
+│  ├─ lib/                               # データ読み込みヘルパ
+│  │  ├─ posts.ts                        # getAllPosts / getPostsByAuthor (.contents/posts.json を import)
+│  │  └─ members.ts                      # getAllMembers / getMember
+│  │
+│  ├─ app/                               # App Router
+│  │  ├─ layout.tsx                      # next/font (Source_Serif_4 + JetBrains_Mono) + Header
+│  │  ├─ globals.css                     # Tailwind v4 @theme（色・フォントトークン）
+│  │  ├─ page.tsx                        # トップ: Hero + <Suspense><PostList /></Suspense>
+│  │  ├─ not-found.tsx                   # 404
+│  │  ├─ sitemap.ts                      # MetadataRoute.Sitemap（要 dynamic="force-static"）
+│  │  ├─ robots.ts                       # MetadataRoute.Robots（同上）
+│  │  ├─ about/page.tsx
+│  │  └─ members/
+│  │     ├─ page.tsx                     # 一覧
+│  │     └─ [id]/page.tsx                # 詳細。generateStaticParams + dynamic="force-static"
+│  │
+│  ├─ components/
+│  │  ├─ Header.tsx                      # ロゴ + nav（全リンクに trailing slash 必須）
+│  │  ├─ Hero.tsx                        # "Engineering log." セリフ斜体
+│  │  ├─ MemberBelt.tsx                  # 静的アバター帯（/members/[id]/ への遷移）
+│  │  ├─ MemberCard.tsx                  # /members 一覧の各行
+│  │  ├─ MemberProfileHeader.tsx         # /members/[id] のヘッダ（react-icons）
+│  │  ├─ PostList.tsx                    # "use client" — useSearchParams で ?author= filter
+│  │  │                                  #   フィルタ用アバター帯も内蔵（MemberBelt 別物）
+│  │  └─ PostRow.tsx                     # 各記事行。showAuthor=false で member 詳細用 3 列レイアウト
+│  │
+│  └─ worker/
+│     └─ index.ts                        # fetch: ASSETS pass-through / scheduled: BUILD_HOOK_URL POST
+│
+├─ tests/                                # Vitest（scripts のみ対象、UI は対象外）
+│  ├─ build-posts.test.ts                # 7 tests
+│  └─ build-feeds.test.ts                # 4 tests
+│
+├─ public/
+│  ├─ avatars/*.jpg                      # メンバー写真。Image optimize 不要 (next: unoptimized)
+│  ├─ favicon.ico, icon-256x256.png 等
+│  └─ feed.xml, feed.atom                # ← gitignored。ビルド時生成
+│
+├─ .contents/posts.json                  # ← gitignored。ビルド時生成
+│
+├─ docs/superpowers/
+│  ├─ specs/2026-06-28-team-blog-hub-redesign-design.md   # 設計書（実装前のスナップショット）
+│  └─ plans/2026-06-28-team-blog-hub-redesign.md          # 実装プラン（同上）
+│
+├─ README.md                             # 人間向け
+├─ AGENTS.md                             # このファイル
+└─ CLAUDE.md → AGENTS.md                 # symlink（Claude Code 自動ロード用）
+```
+
+データの流れ:
+```
+RSS feeds → scripts/build-posts.ts → .contents/posts.json
+                                          ↓
+                                     src/lib/posts.ts ← src/app/**/page.tsx
+                                          ↓
+                                     scripts/build-feeds.ts → public/feed.{xml,atom}
+                                          ↓
+                                     next build → out/
+                                          ↓
+                                     wrangler deploy → Worker (ASSETS binding serves out/)
+```
+
 ## データの意味論
 
 - `members.ts` — メンバー定義。`sources`（RSS URL の配列）と `includeUrlRegex` / `excludeUrlRegex`（オプション）で記事を絞る。`members.ts` は trusted 入力扱い（コミッター制御下）
