@@ -6,20 +6,11 @@ export const config = {
   },
   siteRoot:
     process.env.NODE_ENV === "production"
-      ? "https://whatever-dev-blog.vercel.app/"
+      ? "https://team-blog-hub.workers.dev"
       : "http://localhost:3000",
   headerLinks: [
-    {
-      title: "About",
-      href: "/about",
-    },
-    {
-      title: "Company",
-      href: "https://whatever.co",
-    },
-    {
-      title: "GitHub",
-      href: "https://github.com/Whatever-Co",
-    },
+    { title: "About", href: "/about" },
+    { title: "Members", href: "/members" },
+    { title: "RSS", href: "/feed.xml" },
   ],
 };

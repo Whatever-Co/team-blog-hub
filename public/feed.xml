@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Whatever Dev Blog</title>
+        <link>http://localhost:3000</link>
+        <description>Whatever Co. Dev Team Blog</description>
+        <lastBuildDate>Thu, 25 Jun 2026 17:15:51 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ja</language>
+        <copyright>© Whatever Co.</copyright>
+        <item>
+            <title>.NET Native AOT でネイティブライブラリを作る</title>
+            <link>https://zenn.dev/asus4/articles/b65b2821f5dcf8</link>
+            <guid>https://zenn.dev/asus4/articles/b65b2821f5dcf8</guid>
+            <pubDate>Thu, 25 Jun 2026 17:15:51 GMT</pubDate>
+            <description><![CDATA[Zennのスクラップで調べていた内容がある程度まとまって来たので、記事にしました。 実験したものiOS/Android/macOS/Windows すべてをC#で作るフレームワークは.NET MAUI、Avalonia、Unityなどの選択肢がありますが、今回はC#からNative AOTを使って、ネイティブライブラリ(.dylib, .so, xcframework)をビルドして、Swift/Kotlinなどのネイティブ側から呼び出して使うことができるか実験してみました。以下の調査をしたプロジェクトをGitHubに公開しています。ネイティブ(Swift/Kotlin)か...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>UPMパッケージをPackage Signatures対応する</title>
+            <link>https://zenn.dev/asus4/articles/89c8ae3a1bb891</link>
+            <guid>https://zenn.dev/asus4/articles/89c8ae3a1bb891</guid>
+            <pubDate>Fri, 19 Jun 2026 23:59:10 GMT</pubDate>
+            <description><![CDATA[!主にこの記事に関係のある方：Unityのライブラリを Package Manager方式で GitHubへ公開している方Zennのスクラップでつらつら調べていたことのまとめです。 先にまとめ状況がややこしいので先にまとめまとめます。Git URL から直接読み込む → 問題有りません。UPM は 以下のような形式に対応しているので、依存がない場合は素直にこの方式にしちゃうのが一番手っ取り早い気がします。com.example.packageid": "https://github.com/user/reponame.git?path=Packages/com.exa...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>UnityからWebXR 書き出しをしてみる</title>
+            <link>https://zenn.dev/asus4/articles/9dd5f98fa99f26</link>
+            <guid>https://zenn.dev/asus4/articles/9dd5f98fa99f26</guid>
+            <pubDate>Fri, 19 Jun 2026 15:33:46 GMT</pubDate>
+            <description><![CDATA[ちょっと Meta Questで アプリを作って人に試してもらいたいときに、Meta Quest Storeで毎回配信するのが少し面倒で、もっと簡単な方法は無いのかな〜。と思い自分の勉強のために UnityからWebXR書き出しを試してみた以下スクラップのまとめです。https://zenn.dev/asus4/scraps/6c14114f38879fプロジェクトはGitHubで公開しています。https://github.com/asus4/WebXRTheater WebXR とはその名の通り、XRの機能をWebブラウザ/JavaScriptから使えるようにするAPIた...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Unity WebGLでWebXRってできるかな？</title>
+            <link>https://zenn.dev/asus4/scraps/6c14114f38879f</link>
+            <guid>https://zenn.dev/asus4/scraps/6c14114f38879f</guid>
+            <pubDate>Wed, 15 Apr 2026 09:42:19 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>世界中のライブカメラを巡る — Fernweh の技術解説</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n0c830a32b788</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n0c830a32b788</guid>
+            <pubDate>Wed, 08 Apr 2026 10:54:36 GMT</pubDate>
+            <description><![CDATA[はじめにこのプロジェクトの記事、コード、画像はすべてClaudeが書いています。（すごい）僕はコンセプトとやりたいことを伝えてただけです。（本当にすごい）それではClaudeくんの解説記事です。どうぞ〜続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>スマホから自分 Macに SSH ログインできるようにするメモ（Claude Code のために）</title>
+            <link>https://zenn.dev/kidapu/scraps/8d8a594844aced</link>
+            <guid>https://zenn.dev/kidapu/scraps/8d8a594844aced</guid>
+            <pubDate>Sat, 14 Feb 2026 23:28:26 GMT</pubDate>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Unity 6.3 LTSのUPM Package signatures対応をする</title>
+            <link>https://zenn.dev/asus4/scraps/158532dc7768a1</link>
+            <guid>https://zenn.dev/asus4/scraps/158532dc7768a1</guid>
+            <pubDate>Sat, 27 Dec 2025 15:11:13 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>macOS で houdini_setup をそこそこ簡単に読み込ませる zsh の function 書いた</title>
+            <link>https://zenn.dev/hige/articles/72ff7d8fbfef58</link>
+            <guid>https://zenn.dev/hige/articles/72ff7d8fbfef58</guid>
+            <pubDate>Wed, 13 Aug 2025 17:22:40 GMT</pubDate>
+            <description><![CDATA[macOS で Houdini Launcher から Houdini Terminal を起動すると、 macOS 標準のターミナルが起動する。かなり以前からの iTerm2 ユーザーとしてはなんとかコレを iTerm2 を起動させたい。んだけども、わたしごときの Houdini 力では解決出来なかったので、じゃあ Houdini Terminal が起動時にやってる初期化を iTerm2 でやってしまえば良い！ということでやってみる。ありがたいことに Houdini Terminal を起動すると、どうやって初期化してるか？を echo してくれているので何をすべきかはすぐに理解で...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>LiteRT を Unityで動かせるか検討</title>
+            <link>https://zenn.dev/asus4/scraps/e4e2ce08a00ace</link>
+            <guid>https://zenn.dev/asus4/scraps/e4e2ce08a00ace</guid>
+            <pubDate>Tue, 24 Jun 2025 20:02:41 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Kokoro TTSのメモ</title>
+            <link>https://zenn.dev/asus4/scraps/1155adc352edd2</link>
+            <guid>https://zenn.dev/asus4/scraps/1155adc352edd2</guid>
+            <pubDate>Tue, 15 Apr 2025 11:44:51 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>ONNX Runtime GenAIをUnityで動かす実験</title>
+            <link>https://zenn.dev/asus4/scraps/1b7828455823c3</link>
+            <guid>https://zenn.dev/asus4/scraps/1b7828455823c3</guid>
+            <pubDate>Fri, 04 Apr 2025 07:39:48 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>[Unity] ReadOnlySpan<T>を GraphicsBuffer.SetData() したい</title>
+            <link>https://zenn.dev/asus4/articles/e7b5a2ed474b22</link>
+            <guid>https://zenn.dev/asus4/articles/e7b5a2ed474b22</guid>
+            <pubDate>Fri, 07 Feb 2025 08:39:37 GMT</pubDate>
+            <description><![CDATA[小ネタです。C#開発しているとSpanを多用しますが、まだUnityのAPIでSpanに対応できてないものが結構あります。GraphicsBufferもその一つ。span.ToArray()したりNativeArrayに変換したりするのも無駄なので、Spanのまま渡したいなと思っていました。調べてみるとInternalSetNativeDataをreflectionで叩いている例は見つけましたが、 Refrection 使わない例が見つからなかったので用意してみました。UnityのAPIもどんどんSpan対応増えてるので、早く追加されるといいですね。]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Unity ScriptedImporterで拡張子が被ったときの対策</title>
+            <link>https://zenn.dev/asus4/articles/f07d6461474fa1</link>
+            <guid>https://zenn.dev/asus4/articles/f07d6461474fa1</guid>
+            <pubDate>Thu, 21 Nov 2024 19:45:50 GMT</pubDate>
+            <description><![CDATA[ScriptedImporterを使うと、Unityで対応してない種類の拡張子もUnity読み込み時に別のアセットに変換してUnityで読み込むことができます。https://docs.unity3d.com/ScriptReference/AssetImporters.ScriptedImporter.html私が公開しているOnnxRuntime-Unityライブラリは.onnxと.ort、2種類の拡張子の機械学習モデルを読み込むことができますが、.onnxはUnity公式の機械学習推論ライブラリでもあるSentisでも対応しており、OnnxRuntimeとSentisが同時にイ...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>.NET Native AOTを調べる</title>
+            <link>https://zenn.dev/asus4/scraps/690d551fc93a85</link>
+            <guid>https://zenn.dev/asus4/scraps/690d551fc93a85</guid>
+            <pubDate>Tue, 19 Nov 2024 21:02:45 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Stream Diffusion を rye + windows にインストール</title>
+            <link>https://zenn.dev/kidapu/scraps/8b9773b237b7cd</link>
+            <guid>https://zenn.dev/kidapu/scraps/8b9773b237b7cd</guid>
+            <pubDate>Tue, 29 Oct 2024 03:26:07 GMT</pubDate>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Three.js の WebGPU 対応と TSL について</title>
+            <link>https://zenn.dev/wtshm/articles/2d55e77f48de55</link>
+            <guid>https://zenn.dev/wtshm/articles/2d55e77f48de55</guid>
+            <pubDate>Fri, 24 May 2024 00:57:03 GMT</pubDate>
+            <description><![CDATA[Three.js の WebGPU 対応について調べていく中で、ここ数年の Three.js にまつわる動向がいろいろと興味深かったので、その周辺も含めて簡単にまとめてみました。 そもそも WebGPU とは？https://developer.mozilla.org/ja/docs/Web/API/WebGPU_APIWebGPU は、WebGL の後継技術として登場した次世代グラフィックス API です。より低レベルで汎用性のある GPU アクセスを可能にし、ブラウザ上での高度な 3D グラフィックスやコンピューティングの実現を目指しています。WebGPU が生まれた背景に...]]></description>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Windows で生成された SSH 秘密鍵で invalid format 出た</title>
+            <link>https://zenn.dev/hige/articles/0a351c44e087ab</link>
+            <guid>https://zenn.dev/hige/articles/0a351c44e087ab</guid>
+            <pubDate>Mon, 18 Mar 2024 08:30:24 GMT</pubDate>
+            <description><![CDATA[クライアント側で発行してくれた SSH の秘密鍵を使ってサーバにログインしようとして、微妙にハマりかけたので備忘録としてメモ。 invalid format で怒られる送られてきたファイルを使って macOS で　ssh を使ってログインしようとしてみたら、以下のようなエラーが。$ ssh -i ./xxxx.key user@example.comLoad key "./xxx.key": invalid formatuser@example.com: Permission denied (...).エラーメッセージで雑にググってみると結構ヒットして、そこそこメジャーなエ...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>Tauri を使ってみる</title>
+            <link>https://zenn.dev/wtshm/scraps/8d1f26e22cdf3a</link>
+            <guid>https://zenn.dev/wtshm/scraps/8d1f26e22cdf3a</guid>
+            <pubDate>Thu, 08 Feb 2024 03:54:44 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Unity SFX Reverb Effect プリセットメモ</title>
+            <link>https://zenn.dev/asus4/articles/7d247860f76e83</link>
+            <guid>https://zenn.dev/asus4/articles/7d247860f76e83</guid>
+            <pubDate>Thu, 30 Nov 2023 14:50:24 GMT</pubDate>
+            <description><![CDATA[Unityのオーディオ機能のAudio Mixerから追加出来る標準リバーブエフェクトであるSFX Reverb Effect。多彩な表現が出来ますが、パラメーターが多すぎて、DAWソフトウェアで音楽を作ったことがある人、オーディオに興味がある人じゃないと設定難しいですよね。公式ドキュメントを見ても、実際に音がどう変わるのか全然想像がつきません。以下、公式ドキュメントより抜粋↑SFX Reverb Effectのパラメータープロパティ機能Dry Level出力中のドライ信号のミックスレベル（単位：mB）–10000.0 ~ 0.0 デフォルト 0 mB...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>老い</title>
+            <link>https://note.com/migifun/n/n6d267be9da92</link>
+            <guid>https://note.com/migifun/n/n6d267be9da92</guid>
+            <pubDate>Wed, 22 Nov 2023 07:09:13 GMT</pubDate>
+            <description><![CDATA[55歳まで子育ては続くし、70歳まで住宅ローンは終わらない。30代後半になり体力は落ちてきたし、20歳から10kg以上太った。以前ほど集中力は持続しない。疲れが寝ても取れなくなった。首や肩も痛いし、目もすぐ疲れる。2歳半の息子はイヤイヤがピークで、下の娘はもうすぐ6ヶ月でまだまだ夜泣いて起きる。毎日が家事育児にバタバタで、自分の時間なんてなく、夫婦の話し合い時間もなかなか取れないし、仕事の時間は8時間確保するのに必死だ。奥さんも毎日毎日頑張ってくれるけど、そろそろ疲れがピーク。技術は日々進化していて、自分がこの先何を武器に仕事していくべきか、いつも悩んでる。10年後、20年後、もがきながら、悩みながら、それでも小さな気付きやささやかな幸せに触れながら。70歳になった自分は、どうなっているだろう。子どもが育ち、仕事も辞めて、溜まっているはずの貯金を少しずつ使いながら、奥さんと、楽しく過ごせているだろうか。70歳になったら何がしたいですか。そのためにいま何をしますか。本日、東京お台場にある日本科学未来館の常設展示が7年ぶりにリニューアルされ、老いをテーマにしたエリア「老いパーク」が公開されました。Whateverが企画制作をしていまして、その中の聴覚の老いを擬似体験できる「サトウの達人」、視覚の老いを擬似体験できる「３つの〇〇なテレビゲーム」の制作を担当させていただきました。ぬあああああ！！めちゃくちゃ大変だった！！ということなんですが、なんとかかんとか間に合いまして、今日のオープンを見届けて岡山へ帰る新幹線の中です。数年前まで子ども向けのデジタル体験コンテンツ（らくがき描いてゴニョゴニョとか、UFOで人吸ってゴニョゴニョとか）をよく作っていたんですが最近はそういう案件がご無沙汰で。今日見てたら修学旅行生たちがゲームをプレイしながらキャッキャと盛り上がっていたり、ご年配方の団体が聞き取りにくい聴覚コンテンツを前にワイワイ雑談していたりを見ると、なんだかグッときて、久しぶりに「作ったぞ！！」と言いたくなる展示になったかなと思います。その他にも、体験コンテンツ盛りだくさん、弊社のリソース使いまくり（展示内にスタッフロールあるのでぜひ最後まで見てください！）な総力戦案件となっております。人それぞれ生活があって、その人の後ろにはたくさんの家族や繋がりがあって、共に生きながら、老いていきます。ぜひ展示を通して、この先の未来をどう生きていくか、身近な人と話すキッカケになれたら、ほんとに最高です。新幹線が岡山に着いたら、もう一駅乗って、公園で遊んでる奥さんと息子と娘に合流します。帰りの車で、将来について楽しく話したいなと思いました。続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>Xcode 15でUnityが動かない</title>
+            <link>https://zenn.dev/asus4/articles/7ff7438b1a3f2b</link>
+            <guid>https://zenn.dev/asus4/articles/7ff7438b1a3f2b</guid>
+            <pubDate>Mon, 02 Oct 2023 20:33:48 GMT</pubDate>
+            <description><![CDATA[ついiOS17の新機能を試してみたくて、アップデートしたところ、正式リリースのXcode 15.0 (15A240d)環境でのUnity iOSのビルドにがっつり嵌ったのでメモ。ハマりどころは２箇所。 そもそもXcodeのビルドが通らないUnityのLTSを使っている場合は最新版へアップグレードして治りました。https://issuetracker.unity3d.com/issues/building-projects-with-il2cpp-scripting-backend-for-apple-platforms-fails-with-xcode-15-dot-0b6-...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>ONNXRuntime Unity Plugin</title>
+            <link>https://zenn.dev/asus4/scraps/2c17b71ffd5552</link>
+            <guid>https://zenn.dev/asus4/scraps/2c17b71ffd5552</guid>
+            <pubDate>Wed, 27 Sep 2023 06:07:51 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>ダンボールでビルケンを作ってみる - 現代民藝品試作編</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n0deb458bf392</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n0deb458bf392</guid>
+            <pubDate>Thu, 31 Aug 2023 12:39:16 GMT</pubDate>
+            <description><![CDATA[民藝にはまっている続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>Unity Transport を試す</title>
+            <link>https://zenn.dev/wtshm/scraps/18f0b99d807d70</link>
+            <guid>https://zenn.dev/wtshm/scraps/18f0b99d807d70</guid>
+            <pubDate>Fri, 28 Jul 2023 04:30:17 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Unity の UI Toolkit をざっくり理解する</title>
+            <link>https://zenn.dev/wtshm/scraps/ac2a900746d3de</link>
+            <guid>https://zenn.dev/wtshm/scraps/ac2a900746d3de</guid>
+            <pubDate>Wed, 26 Jul 2023 11:21:49 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Next.js から Astro に移行する</title>
+            <link>https://zenn.dev/wtshm/scraps/00ddf279aab492</link>
+            <guid>https://zenn.dev/wtshm/scraps/00ddf279aab492</guid>
+            <pubDate>Tue, 04 Jul 2023 01:16:25 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>visionOS 1 beta を雑に触ってみる</title>
+            <link>https://zenn.dev/wtshm/scraps/f5343b47171903</link>
+            <guid>https://zenn.dev/wtshm/scraps/f5343b47171903</guid>
+            <pubDate>Fri, 23 Jun 2023 01:26:33 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Tips: Unity Visual Effects Graph</title>
+            <link>https://zenn.dev/asus4/articles/6898aa82e8e3c4</link>
+            <guid>https://zenn.dev/asus4/articles/6898aa82e8e3c4</guid>
+            <pubDate>Thu, 22 Jun 2023 07:55:26 GMT</pubDate>
+            <description><![CDATA[雑多な備忘録メモ。随時更新していきます。 Shuriken Particle or VFX GraphVFX GraphはURP/HRDPのみ。Built-in Render pipelineのときは使わないほうが良い。iOS, Androidでも使えるが、Android ARCoreは2023年1月現在OpenGLES対応のみでVulkanに対応していないので、実質AndroidのARが含まれるときは使えない。ARCoreのVulkan対応してほしい(最新のGoogle ARCoreではされたけど、ARFoundation上はまだっぽい？)。Shuriken Particle...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Terraform で AWS S3 public access block に対応する</title>
+            <link>https://zenn.dev/hige/articles/01b69444ccaa3d</link>
+            <guid>https://zenn.dev/hige/articles/01b69444ccaa3d</guid>
+            <pubDate>Tue, 16 May 2023 11:53:28 GMT</pubDate>
+            <description><![CDATA[libversionTerraform1.4.6hashicorp/aws4.67.02023/04 より AWS S3 のパブリックアクセスブロックが自動で有効になったんだけども、その影響で Terraform で設定するときにもひと手間増えたので備忘録としてメモ。 まずは今まで通りにやってみるだいぶ端折ってるけども、今回に影響がある部分だけを抜粋したのがコレ。 main.tfprovider "aws" {}#  S3 バケットを作成# see: https://registry.terraform.io/providers/ha...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>（ほぼ）水漏れしない3Dプリントノウハウ</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n8748cc2d11ea</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n8748cc2d11ea</guid>
+            <pubDate>Fri, 21 Apr 2023 13:18:30 GMT</pubDate>
+            <description><![CDATA[3Dプリンタで水漏れしないカップを作りたく、色々調査検証してうまく行ったので、ノウハウをここにまとめておく。タイトルの（ほぼ）というのは、今回作った造形物ではうまく行ったが、どんな造形物でも水漏れしないということは保証できないので、エクスキューズしているだけ。今回作った造形物は、1Lの水が入る円柱状のカップである。続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>[TouchDesigner] Dependency Objectsを使ってPython内の数値をネットワーク側に同期する</title>
+            <link>https://qiita.com/genkitoyama/items/d639845cd516a3284f84</link>
+            <guid>https://qiita.com/genkitoyama/items/d639845cd516a3284f84</guid>
+            <pubDate>Fri, 07 Apr 2023 05:32:53 GMT</pubDate>
+            <description><![CDATA[はじめに私は展示系インスタレーションなどのシステム開発をTouchDesignerで行うことがありますが、状態管理や外部との通信等のためにPythonを書くことが多いです。（以前は Table DAT に必要な情報を全部入れていたのですが、システムが複雑になると管理がしんどくなってしまいました。）そんな中、Python Class内の変数を、ネットワーク側のoperatorにも反映した]]></description>
+            <author>genkitoyama@team-blog-hub.local (Genki Toyama)</author>
+        </item>
+        <item>
+            <title>[GAS] 日本・アメリカ・台湾で明日が祝日だったらSlackに通知する</title>
+            <link>https://qiita.com/genkitoyama/items/ddf7f763c663cebf9f73</link>
+            <guid>https://qiita.com/genkitoyama/items/ddf7f763c663cebf9f73</guid>
+            <pubDate>Thu, 06 Apr 2023 04:03:14 GMT</pubDate>
+            <description><![CDATA[はじめに弊社(Whatever Co.) [https://whatever.co/ja/] は、日本(Tokyo)以外にも、US(NewYork)や台湾(Taipei)にオフィスがあります。基本的にはそれぞれの国内でチームを組むことが多いですが、案件によっては、日本のメンバーがUSや台湾チームと連携することがあります。海外チームと連携するにあたり、時差もそうですが、祝日の存在に気をつ]]></description>
+            <author>genkitoyama@team-blog-hub.local (Genki Toyama)</author>
+        </item>
+        <item>
+            <title>Windows11 で機械学習用に WSL2 の環境構築したときのメモ</title>
+            <link>https://zenn.dev/kidapu/scraps/e07c53e58dd3fe</link>
+            <guid>https://zenn.dev/kidapu/scraps/e07c53e58dd3fe</guid>
+            <pubDate>Tue, 04 Apr 2023 10:00:16 GMT</pubDate>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Blenderの勉強記録</title>
+            <link>https://zenn.dev/asus4/scraps/88502c474a17a4</link>
+            <guid>https://zenn.dev/asus4/scraps/88502c474a17a4</guid>
+            <pubDate>Fri, 10 Feb 2023 21:57:47 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>巨大モンスターをビルにARで出現させる</title>
+            <link>https://zenn.dev/kidapu/articles/9c7ef11d85eea9</link>
+            <guid>https://zenn.dev/kidapu/articles/9c7ef11d85eea9</guid>
+            <pubDate>Fri, 10 Feb 2023 12:41:54 GMT</pubDate>
+            <description><![CDATA[MoAR の 2022 年アドベントカレンダー 23 日目の記事です。（今は2022年の12月73日...年末に書く宣言したアドベントカレンダーめちゃ遅れて今できました。） どうも私は Whatever のプログラマーの貴田です。2022年夏に乃木坂にある Whatever 社からリリースされた MoAR アプリは、会社のビルに iPhone をかざすと、ビルに連動してたくさんのARシーンを見ることができます。私が担当したのは、その中の１つである、巨大なモンスター「emoc」（エモック）が登場する AR シーンのプログラム開発です。この記事では、巨大なモンスター「emoc」（エモック...]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Mac を新調してからやったこと</title>
+            <link>https://zenn.dev/wtshm/articles/63e581dfffd7ab</link>
+            <guid>https://zenn.dev/wtshm/articles/63e581dfffd7ab</guid>
+            <pubDate>Tue, 07 Feb 2023 02:30:13 GMT</pubDate>
+            <description><![CDATA[数年に一度の恒例行事、ということでやったことを雑に記録します。 とりあえず🍺https://brew.sh/$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"以降は基本的に Homebrew Cask でインストールする。 すぐ必要になりそうなやつ1PasswordGoogle ChromeKarabiner-ElementsDropboxSlackDiscordNotionZoomVisual Studio C...]]></description>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Waveshare 3.5inch LCD を Raspberry Pi Pico と LovyanGFX で動かす方法</title>
+            <link>https://qiita.com/Saqoosha/items/80a1f52e640c95fb1106</link>
+            <guid>https://qiita.com/Saqoosha/items/80a1f52e640c95fb1106</guid>
+            <pubDate>Sun, 29 Jan 2023 16:48:13 GMT</pubDate>
+            <description><![CDATA[Raspberry Pi Pico が後ろにがっちゃんこできるようになってて MicroPython とか Arduino から SPI接続のデバイスとして絵が出せる。製造元の Waveshare のサイト [https://www.waveshare.com/wiki/Pico-ResTouch-LCD-3.5]からArduino や MicroPythoon のサンプルコードがダウンロ]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>Unity使ってる人はmacOS Venturaまだ入れないほうが良さそう</title>
+            <link>https://zenn.dev/asus4/scraps/98f650cac4e111</link>
+            <guid>https://zenn.dev/asus4/scraps/98f650cac4e111</guid>
+            <pubDate>Fri, 06 Jan 2023 12:18:17 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>HTML メールと向き合う</title>
+            <link>https://zenn.dev/wtshm/scraps/91985984748f0d</link>
+            <guid>https://zenn.dev/wtshm/scraps/91985984748f0d</guid>
+            <pubDate>Thu, 05 Jan 2023 15:30:47 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>UnityでTensorFlow Lite Android Neural Networks API Delegate対応する</title>
+            <link>https://zenn.dev/asus4/scraps/14572ff15e229b</link>
+            <guid>https://zenn.dev/asus4/scraps/14572ff15e229b</guid>
+            <pubDate>Tue, 27 Dec 2022 08:47:09 GMT</pubDate>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>MoAR を作ってみたまとめ</title>
+            <link>https://qiita.com/Saqoosha/items/b18c4bd2b02d035ff8d1</link>
+            <guid>https://qiita.com/Saqoosha/items/b18c4bd2b02d035ff8d1</guid>
+            <pubDate>Thu, 22 Dec 2022 05:22:21 GMT</pubDate>
+            <description><![CDATA[VPS (Visual Positioning System) を使って AR コンテンツを作ってみてどうだったか？のお話。GEOSPATIAL APIビルスケールで AR 表現をする VPS 選定 1[https://qiita.com/Saqoosha/items/b9fef6517831ac136a26]ビルスケールで AR 表現をする VPS 選定 2[https://qi]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>壁からロゴが出てくるエフェクトを改良する</title>
+            <link>https://qiita.com/Saqoosha/items/5b163fb6b60f8d1a810a</link>
+            <guid>https://qiita.com/Saqoosha/items/5b163fb6b60f8d1a810a</guid>
+            <pubDate>Mon, 19 Dec 2022 06:16:42 GMT</pubDate>
+            <description><![CDATA[MoAR アプリを開いて最初にでてくる作品 "Mo(AR)^2" [https://whatever.co/moar/ja/moar2/] の冒頭の演出、壁面のQR コードが壁から立体化して飛び出てくるというエフェクトをおかだくんが作ってくれていて[https://note.com/migifun/n/n93e6d9f11cce]そこそこいい感じにはできていたものの、もうちょっと違和感なく実現]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>リモートワークでAR案件やるの大変</title>
+            <link>https://note.com/migifun/n/n860ab362aa59</link>
+            <guid>https://note.com/migifun/n/n860ab362aa59</guid>
+            <pubDate>Fri, 16 Dec 2022 21:51:21 GMT</pubDate>
+            <description><![CDATA[この記事はMoAR - Museum of AR Advent Calendar 2022の17日目の記事です。こんにちは続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>目玉だけこっち向く話</title>
+            <link>https://qiita.com/Saqoosha/items/0ead104b25e37b4f0a98</link>
+            <guid>https://qiita.com/Saqoosha/items/0ead104b25e37b4f0a98</guid>
+            <pubDate>Fri, 16 Dec 2022 07:35:28 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] の "Watching[https://whatever.co/moar/ja/watching/]" という作品をつくるときの目玉を描画方法あれこれの話。こっち向く"Watching" は壁が壊れてその奥から巨大な目が AR 体験してるその人のほうをギョロリと向くという作品です。体験者の位置は Geospatial]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>壁からロゴを出してゴニョゴニョ動かす</title>
+            <link>https://note.com/migifun/n/nf0ccf436f12a</link>
+            <guid>https://note.com/migifun/n/nf0ccf436f12a</guid>
+            <pubDate>Thu, 15 Dec 2022 22:14:22 GMT</pubDate>
+            <description><![CDATA[この記事はMoAR - Museum of AR Advent Calendar 2022の16日目の記事です。こんにちは続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>Cinema 4D で USDZ を作るのがつらい</title>
+            <link>https://qiita.com/Saqoosha/items/6b14c6d0c0a00c2fb98c</link>
+            <guid>https://qiita.com/Saqoosha/items/6b14c6d0c0a00c2fb98c</guid>
+            <pubDate>Thu, 15 Dec 2022 07:53:44 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] の "Watching[https://whatever.co/moar/ja/watching/]" というコンテンツを作ったときに Cinema 4D[https://www.maxon.net/ja/cinema-4d] から USDZ フォーマットで 3D データを作ろうとして大変だった話。DOMINGO は CI]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>壁からロゴを消す</title>
+            <link>https://note.com/migifun/n/n93e6d9f11cce</link>
+            <guid>https://note.com/migifun/n/n93e6d9f11cce</guid>
+            <pubDate>Wed, 14 Dec 2022 20:17:33 GMT</pubDate>
+            <description><![CDATA[この記事はMoAR - Museum of AR Advent Calendar 2022の15日目の記事です。こんにちは続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>おばけが窓から窓へ移動しながら掃除機に吸い込まれる動き</title>
+            <link>https://qiita.com/Saqoosha/items/80b54cdcce22c7b868b1</link>
+            <guid>https://qiita.com/Saqoosha/items/80b54cdcce22c7b868b1</guid>
+            <pubDate>Tue, 13 Dec 2022 10:43:17 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] のコンテンツのひとつ、"Ghost Building[https://whatever.co/moar/ja/ghost_building/]" に出てくるおばけのモーションを作ったときのお話。おばけが窓から窓へ移動するビルにある複数の窓とエントランスのドアのどれかからどれかへランダムに移動します。いちいち手で動き]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>"App Clip Unavailable”</title>
+            <link>https://qiita.com/Saqoosha/items/ff89a4857b65624203ca</link>
+            <guid>https://qiita.com/Saqoosha/items/ff89a4857b65624203ca</guid>
+            <pubDate>Mon, 12 Dec 2022 08:58:10 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] をお手軽に体験するために使用している iOS の App Clipでちょっと困ったことが起こったときのお話。（本番環境でやらかしちゃった人のカレンダー | Advent Calendar 2022 - Qiita[https://qiita.com/advent-calendar/2022/yarakashi-productio]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>GitHub Action で AWS S3 にアップロード</title>
+            <link>https://qiita.com/Saqoosha/items/354e470dd4fb0b61cccd</link>
+            <guid>https://qiita.com/Saqoosha/items/354e470dd4fb0b61cccd</guid>
+            <pubDate>Sat, 10 Dec 2022 06:02:12 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] で使用しているモデルデータやテクスチャはコードと一緒に GitHub上で管理されています。これらのデータは GitHub に push されるとそのタイミングで GitHub Action によって AWS の S3へ自動的にアップロードされます。MoAR アプリは起動後に S3 からデータをロードしてコンテンツが表示されます。]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>ARKit ReplayDataの中身を覗いてみる</title>
+            <link>https://zenn.dev/asus4/articles/b27ecc03d4bf9a</link>
+            <guid>https://zenn.dev/asus4/articles/b27ecc03d4bf9a</guid>
+            <pubDate>Fri, 09 Dec 2022 15:10:00 GMT</pubDate>
+            <description><![CDATA[この記事はMoAR - Museum of AR Advent Calendar 2022の10日目の記事です。https://qiita.com/Saqoosha/items/83df76d32f1b473703d16日目の記事↑でも書いていたように、普段ベルリンに住んで、東京の特定のビルでしか見れないアプリをリモート開発！ということで、遠隔でテストする機能が非常に重要になっていました。個人的に、ここ最近参加しているプロジェクトの半分以上はARを含むeXtended Reality (XR)関係。そのすべてのプロジェクトをリモートで参加しているのでAR環境をシュミレーションするの...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>iOSアプリのLocalizable stringsをSpread Sheetから作成</title>
+            <link>https://zenn.dev/asus4/articles/bea3d2f978773a</link>
+            <guid>https://zenn.dev/asus4/articles/bea3d2f978773a</guid>
+            <pubDate>Thu, 08 Dec 2022 15:00:01 GMT</pubDate>
+            <description><![CDATA[この記事はMoAR - Museum of AR Advent Calendar 2022の9日目の記事です。 背景多言語対応のアプリを作るときにみなさんどうやって文言をかんりしているのでしょうか？私の関わるプロジェクトでは文言は翻訳担当の人にお願いするため、Google Spread Sheetでアプリ内で使う文言を一括管理してしまうことが多いです。それをXcodeのLocalizable Stringsへ手動反映していては間違いも増えるので、簡単に自動化しました。絶対あるだろなと思っていくつか検索したものの、今回の動かしているXcode Cloud上でもインストール要らず、設...]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>ARReferenceImage を使って精度を上げる</title>
+            <link>https://qiita.com/Saqoosha/items/3cd77ccb2559cd575854</link>
+            <guid>https://qiita.com/Saqoosha/items/3cd77ccb2559cd575854</guid>
+            <pubDate>Thu, 08 Dec 2022 07:09:38 GMT</pubDate>
+            <description><![CDATA[ARCore Geospatial API の精度はそこそこよい。API から取得できる値を見ても水平方向 20cmとかの精度がでてるんだけど、実際の見た目でいうと 20cm ズレるとそこそこ気になる。moar2.jpg[https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>壁がぶっこわれるエフェクトの作り方</title>
+            <link>https://qiita.com/Saqoosha/items/0d5d4aa5d53948376ebe</link>
+            <guid>https://qiita.com/Saqoosha/items/0d5d4aa5d53948376ebe</guid>
+            <pubDate>Tue, 06 Dec 2022 13:37:29 GMT</pubDate>
+            <description><![CDATA[MoAR の Watching [https://whatever.co/moar/ja/watching/]という作品ではビルの壁がリアルタイムに破壊されるという表現があります。[https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>リプレイデータを使って AR コンテンツ開発する</title>
+            <link>https://qiita.com/Saqoosha/items/83df76d32f1b473703d1</link>
+            <guid>https://qiita.com/Saqoosha/items/83df76d32f1b473703d1</guid>
+            <pubDate>Mon, 05 Dec 2022 09:33:59 GMT</pubDate>
+            <description><![CDATA[リプレイデータとはARKit をつかってコンテンツ開発をする際に、あらかじめ実デバイスをつかってカメラ映像やセンサーデータ（replaydata）を記録しておいて、開発環境時にそれをで再生することで実デバイスがなくてもカメラをぐりぐり動かさなくても現地にいかなくても開発できるようにする仕組み。MoAR [https://whatever.co/moar/] 開発チームはわたし (@Saq]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>AR 表現に使用する 3D フレームワーク選定</title>
+            <link>https://qiita.com/Saqoosha/items/250eba9d8136ae3fab6b</link>
+            <guid>https://qiita.com/Saqoosha/items/250eba9d8136ae3fab6b</guid>
+            <pubDate>Thu, 01 Dec 2022 13:03:26 GMT</pubDate>
+            <description><![CDATA[3D 描画エンジンが必要だMoAR [https://whatever.co/moar/] のビルをトラッキングする VPS 部分については1日目[https://qiita.com/Saqoosha/items/b9fef6517831ac136a26]、2日目の記事[https://qiita.com/Saqoosha/items/6272ab6f11407b4cc9d6]に書いたよう]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>アプリをダウンロードせずに起動する App Clip</title>
+            <link>https://qiita.com/Saqoosha/items/5d2cd0aa08cb1b1d8eb1</link>
+            <guid>https://qiita.com/Saqoosha/items/5d2cd0aa08cb1b1d8eb1</guid>
+            <pubDate>Thu, 01 Dec 2022 08:57:51 GMT</pubDate>
+            <description><![CDATA[アプリダウンロードはめんどくさいMoAR [https://whatever.co/moar/] はビル付近にきたひとたちにその場で即 AR 体験をしてもらう必要があるので通常のアプリ形式ではApp Store からダウンロードしてもらうのが手間。かといって QR コードからブラウザを開いて WebAR でというのも 8th Wallのコンテンツ開発がつらかった（他人の）記憶が思い出されて]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>ビルのモデルを作る</title>
+            <link>https://qiita.com/Saqoosha/items/8c81cbcab7fccab41e07</link>
+            <guid>https://qiita.com/Saqoosha/items/8c81cbcab7fccab41e07</guid>
+            <pubDate>Wed, 30 Nov 2022 08:02:27 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] はビルをキャンバスにした ARコンテンツなのでキャンバスとなるビルの正確なモデルが必要になる。PLATEAU東京だし PLATEAU のデータ使えるかな？と思ってデータ確認してみたところ LOD2で他より精度高く作られてはいるものの今回の用途にはディティールが足らなかった。（周辺のビルとかはオクルージョンとかには使]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>ビルスケールで AR 表現をする VPS 選定 2</title>
+            <link>https://qiita.com/Saqoosha/items/6272ab6f11407b4cc9d6</link>
+            <guid>https://qiita.com/Saqoosha/items/6272ab6f11407b4cc9d6</guid>
+            <pubDate>Wed, 30 Nov 2022 05:02:34 GMT</pubDate>
+            <description><![CDATA[MoAR [https://whatever.co/moar/] を実現するのに必要な VPS (Visual Positioning System)を選定する話、その2。その1はこちら。ARCORE / GEOSPATIAL APIImmersal 調査後、数ヶ月中断しているあいだに Google から Geospatial API[https://developers.]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>ビルスケールで AR 表現をする VPS 選定 1</title>
+            <link>https://qiita.com/Saqoosha/items/b9fef6517831ac136a26</link>
+            <guid>https://qiita.com/Saqoosha/items/b9fef6517831ac136a26</guid>
+            <pubDate>Wed, 30 Nov 2022 03:11:04 GMT</pubDate>
+            <description><![CDATA[MOAR - MUSEUM OF AR とは六本木にある Whatever Co. が入居する WHEREVERビルの壁面に自由に絵を描くことのできるスペースがあって、せっかくならビルやこのエリア一帯を盛り上げるなにかを描こう！でも単に絵を書くだけじゃつまらんので AR連動するものにしよう！って流れでスタート。WHEREVER[https://qiita-user-content]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>Ubuntu 22.04 な EC2 で CloudWatch Agent を試す</title>
+            <link>https://zenn.dev/hige/articles/9ca9231aa30015</link>
+            <guid>https://zenn.dev/hige/articles/9ca9231aa30015</guid>
+            <pubDate>Fri, 21 Oct 2022 07:22:47 GMT</pubDate>
+            <description><![CDATA[!基本的にココに書かれている手順を一通り進めた + 補足程度のことしか書かれていません。是非一度公式ドキュメントに目を通されることをオススメします。公式ドキュメントには Ubuntu 22.04 はサポート範囲に入っていなかったので、ちゃんと使えるかの検証も含めて試してみたメモ。環境は以下の通り。libversionUbuntu22.04CloudWatch AgentCWAgent/1.247355.0 (go1.19; linux; amd64) No Build Date EC2 に必要なポリシーをアタッチしておくココの冒頭に書かれて...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>登山用バックパックの自作</title>
+            <link>https://note.com/ooo_ubi_ooo/n/ndf9ebeb55d2f</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/ndf9ebeb55d2f</guid>
+            <pubDate>Mon, 26 Sep 2022 09:32:33 GMT</pubDate>
+            <description><![CDATA[登山用バックパックが欲しい登山用にバックパックが欲しいが、新品の登山用バックパックは高いわりにかっこいい物があまりないと個人的に思う。どのブランドもデザインがほとんど変わらず（洗練されてそうなったのだろうが）、バキバキの原色のものが多い。中古市場をメルカリやヤフオクやラクマで調べていると80,90年代のミレーやLL Beanなどはデザインが気に入るものがあったがやはり経年劣化で内側のウレタンコーティングが加水分解していたりなど、常用するにはちょっと気が引ける。続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>Headless Unreal Engine Pixel Streaming を Ubuntu な EC2 で試す</title>
+            <link>https://zenn.dev/hige/articles/427a10a2580996</link>
+            <guid>https://zenn.dev/hige/articles/427a10a2580996</guid>
+            <pubDate>Thu, 01 Sep 2022 09:47:31 GMT</pubDate>
+            <description><![CDATA[Unreal Engine Pixel Streaming in AWS with Ubuntu OS を見つけて、まぁすんなりは行かないだろうと思っていたら案の定ハマったので、リトライしつつログを残す。!今回は UE5 Project の Linux Build の方法には触れません。私も既にビルドされたものを受け取って検証しました。 EC2 インスタンスを起動記事中では Ubuntu 20.04 を使っているが、できれば最新で動かしたいので今回は 22.04 で進める。どうしてもダメだったら 20.04 にする。それ以外は基本参考元と同じ。ざっとまとめておくと...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>Go な Web Server を Systemd で良い感じに動かすメモ</title>
+            <link>https://zenn.dev/hige/articles/7c5516e92845ea</link>
+            <guid>https://zenn.dev/hige/articles/7c5516e92845ea</guid>
+            <pubDate>Tue, 16 Aug 2022 11:29:48 GMT</pubDate>
+            <description><![CDATA[ざっと設定するタイミングがあったのでメモがわりに残しておく。環境は以下の通り。libversionUbuntu22.04Go1.19systemd249 Go で Web Server 書く動作確認するだけのコードなのでなるだけシンプルに書く。んで、 Port 80 を Listen したいけどプロセスは root で走らせたくないので、 systemd でポート開いてそれをプログラム側で使うようにする。ディスクリプタごにょる部分は coreos/go-systemd がドンピシャなのでこれを使う。package mainimp...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>日本科学未来館「きみとロボット展」でD.E.A.D. の投票システムを作った</title>
+            <link>https://note.com/kidapu/n/n9f9313f2a52c</link>
+            <guid>https://note.com/kidapu/n/n9f9313f2a52c</guid>
+            <pubDate>Fri, 22 Jul 2022 00:09:36 GMT</pubDate>
+            <description><![CDATA[こんにちわ。Whatever という会社でプログラマをしてる貴田です。日本科学未来館で開催中のきみとロボット展で D.E.A.D. の投票システムを展示しています。会期は2022年3月18日（金）〜8月31日(水)。この記事では、おもに展示を作った時の簡単な Tips を書きます。続きをみる]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>aws_s3_bucket_website_configuration の routing_rules の削除が反映されない</title>
+            <link>https://zenn.dev/hige/articles/4aa4062ccb2ebe</link>
+            <guid>https://zenn.dev/hige/articles/4aa4062ccb2ebe</guid>
+            <pubDate>Tue, 12 Jul 2022 10:19:02 GMT</pubDate>
+            <description><![CDATA[libversionTerraform1.2.3hashicorp/aws4.22.0 まずは routing_rules 指定ナシで apply してみるmain.tf の内容はこんな感じ。resource "aws_s3_bucket" "b" {  bucket = "example.com"}resource "aws_s3_bucket_website_configuration" "c" {  bucket = aws_s3_bucket.b.bucket  index_document {    suffix = "i...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>Terraform を使って良い感じに Basic 認証できる CloudFront Functions を作成する</title>
+            <link>https://zenn.dev/hige/articles/b60f65c26f8353</link>
+            <guid>https://zenn.dev/hige/articles/b60f65c26f8353</guid>
+            <pubDate>Mon, 11 Jul 2022 18:07:49 GMT</pubDate>
+            <description><![CDATA[libversionterraform1.1.9hashicorp/aws4.22.0terraform.tfvars で map に好きなだけユーザーとパスワード突っ込んだら適当に Basic 認証できる CloudFront Functions 書き出してくれるのが欲しくてやってみたメモ。# terraform.tfvars# Basic 認証に設定するユーザーとパスワードを user = password で指定する。# ココで必要なだけ指定する。valid_users = {  spam = "spamsoamspam",  eg...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>ラジオが好き</title>
+            <link>https://note.com/migifun/n/n23493474ccbf</link>
+            <guid>https://note.com/migifun/n/n23493474ccbf</guid>
+            <pubDate>Tue, 21 Jun 2022 18:10:05 GMT</pubDate>
+            <description><![CDATA[眠れなくなった。そんな夜もある。息子が生まれてからというもの規則正しい生活を送っていて、「おかあさんといっしょ」の「からだダンダン」からの「きらきらぽん」を踊った後、保育園へ車で送っていく。ほんとは同じ時間にやってるテレ東の「シナぷしゅ」の方が好きなんだけど、 TVerや公式Youtubeに最新の回が上がってるからいつでも再生できるので、なんとなくEテレにしてしまう。まあNHK+で一週間分見れるんだけど。ご機嫌ななめになったら即座にシナぷしゅを流してご機嫌を取る。そんなことをしてるうちに自分も好きになっちゃって、東京出張の際、どこやらの展示やら美術館やらは見向きもせず、東京駅地下にあるテレ東本舗というショップでシナぷしゅのぬいぐるみや絵本を購入し、ガチャガチャを3回回した。ぷしゅぷしゅ（メインキャラ）のキーホルダーが2回連続で出た時はマジで興奮した。ウキウキでラーメンストリートで塩ラーメン食って帰った。続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>Immersal と ARCore Geospatial API と Lightship VPS と ARKit Location Anchors の比較</title>
+            <link>https://qiita.com/Saqoosha/items/42e8f3ec648a0c9f03be</link>
+            <guid>https://qiita.com/Saqoosha/items/42e8f3ec648a0c9f03be</guid>
+            <pubDate>Fri, 27 May 2022 09:23:10 GMT</pubDate>
+            <description><![CDATA[VPS (Visual Positioning System) を4つ試したので比較する。IMMERSALフィンランド製。日本での大規模導入事例。対応プラットフォーム * Unity (iOS, Android, Nreal, Magic Leap, Huawei AR Engine) * iOS native費用問い合わせないとわからない。けど Fre]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>2D動画を3DにしてARで見る</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n9237e8cb4526</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n9237e8cb4526</guid>
+            <pubDate>Wed, 01 Dec 2021 15:16:32 GMT</pubDate>
+            <description><![CDATA[リュミエール兄弟リュミエール兄弟をご存じでしょうか。メディア論を大学で受講した方や映像系の研究や製作をされている方だったら聞き覚えがあるのではないでしょうか。彼らは映画を発明したフランスの兄弟です。（彼らの映画は4Kリマスターされて2018年に上映もされています。）続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>M1 Mac の Parallels の Windows 11 で USB シリアルアダプターを使う方法</title>
+            <link>https://qiita.com/Saqoosha/items/8fcb5598f0323796735b</link>
+            <guid>https://qiita.com/Saqoosha/items/8fcb5598f0323796735b</guid>
+            <pubDate>Wed, 24 Nov 2021 09:33:54 GMT</pubDate>
+            <description><![CDATA[ARM64 のドライバが提供されてないと動かない。CP210X 系公式から "CP210x Universal Windows Driver" をダウンロードしてインストールするだけ。FTDI 系ARM64 版はまだ公式には配布されてない。Surface Pro X も ARM64 で同様の状況らしく、Microsoft のフォーラムに解決策がある。以前は FTD]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>MissionWorkshopバックパックのためのカメラホルスターの製作</title>
+            <link>https://note.com/ooo_ubi_ooo/n/ne7bdb254bae6</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/ne7bdb254bae6</guid>
+            <pubDate>Fri, 12 Nov 2021 09:30:36 GMT</pubDate>
+            <description><![CDATA[序文先日、新しくコンデジを購入して気に入って旅行や散歩のときに持ち出している。続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>CH340K の macOS 用ドライバ</title>
+            <link>https://qiita.com/Saqoosha/items/1b5a72317a817bdd680c</link>
+            <guid>https://qiita.com/Saqoosha/items/1b5a72317a817bdd680c</guid>
+            <pubDate>Wed, 22 Sep 2021 07:56:32 GMT</pubDate>
+            <description><![CDATA[激安シリアル変換 IC の CH340K [https://akizukidenshi.com/catalog/g/gI-16306/] は macOSに搭載されてる CH340 系ドライバでは vender ID が違うので（なぜ…）動かない。メーカーに問い合わせたら速攻で対応版を作ってくれたとのことで↓以下からダウンロード可能。そのうちメーカーページ [http://www.wc]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>M570を分解して最高のトラックボールを作る</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n0786f44f2c0a</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n0786f44f2c0a</guid>
+            <pubDate>Sun, 19 Sep 2021 23:22:43 GMT</pubDate>
+            <description><![CDATA[製作動機マウスより～普通に～トラックボールが好き～（ゴロが悪い）なんですが、プログラミングやブログを書いているときのようにタイピングをメインにしているときに、ちょっとだけマウスカーソルを動かしたいときがあると思います。そういう時、キーボードのホームポジションから右手を動かしてトラックボールをちょっとだけ触ってまたホームポジションに右手を戻します。この動きめっちゃめんどくさいな～と思っていたので、自分にとって最高のトラックボールを作りたいと思います。続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>Mission WorkshopのARKIVパーツを作る</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n096a44e625d9</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n096a44e625d9</guid>
+            <pubDate>Thu, 09 Sep 2021 05:07:59 GMT</pubDate>
+            <description><![CDATA[MissionWorkshopのARKIVとは普段使っているお気に入りのバックパック、MissionWorkshop。このバックパックはARKIVというモジュラーシステムを持っていて専用のアタッチメントを使って、様々なポーチなどを取り付けることができます。続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>3Dプリンタでミッフィーのクッキー型を作りたい</title>
+            <link>https://note.com/ooo_ubi_ooo/n/n9e7ef03b21b9</link>
+            <guid>https://note.com/ooo_ubi_ooo/n/n9e7ef03b21b9</guid>
+            <pubDate>Tue, 07 Sep 2021 23:30:30 GMT</pubDate>
+            <description><![CDATA[最近ミッフィーに妙にはまっていて、あのなんとも言えないフォルムが最高です。ミッフィー展にも行ってきました。で、今回はミッフィーのクッキー型をつくったよという話です。もちろん前回のようにフリー素材で3Dデータが落ちているわけではないので、モデリングからやりました。続きをみる]]></description>
+            <author>ok@team-blog-hub.local (Kazuto Omori)</author>
+        </item>
+        <item>
+            <title>Flutter 開発覚え書き</title>
+            <link>https://zenn.dev/wtshm/scraps/0e58236c606f11</link>
+            <guid>https://zenn.dev/wtshm/scraps/0e58236c606f11</guid>
+            <pubDate>Mon, 02 Aug 2021 08:29:22 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>CesiumJS のデフォルトの見た目を整える</title>
+            <link>https://zenn.dev/wtshm/scraps/d23d40feca1f2e</link>
+            <guid>https://zenn.dev/wtshm/scraps/d23d40feca1f2e</guid>
+            <pubDate>Tue, 20 Apr 2021 12:36:28 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>deck.gl で Plateau の 3D Tiles を読み込んで表示する</title>
+            <link>https://zenn.dev/wtshm/scraps/3abc73b58d88b7</link>
+            <guid>https://zenn.dev/wtshm/scraps/3abc73b58d88b7</guid>
+            <pubDate>Mon, 19 Apr 2021 16:32:11 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>redis で key pattern にマッチしたものを pop する</title>
+            <link>https://zenn.dev/hige/articles/859f6470d3b8f7</link>
+            <guid>https://zenn.dev/hige/articles/859f6470d3b8f7</guid>
+            <pubDate>Sat, 17 Apr 2021 19:21:40 GMT</pubDate>
+            <description><![CDATA[redis で key pattern にマッチしたものを pop するredis を job queue っぽく使いたくて雑に調べてたら GETDEL ってのがあってめっちゃ便利！やっぱ redis いいね！なんて思ってたら、どうやら最近追加されたコマンドらしく since 6.2 から使えるらしい。んで、本番環境は AWS ElastiCache なので使えるバージョン調べてみたら最新は 6.x ってなってて、ものっそいびみょーなので実際起動してみたら 6.0.5 が起動した。あかんやんか！GET と DEL 組み合わせたらできなくはないんだけども、複数プロセスから処理が走...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>Swiftで調べたことコピペ集</title>
+            <link>https://note.com/migifun/n/nf4067e8aeb41</link>
+            <guid>https://note.com/migifun/n/nf4067e8aeb41</guid>
+            <pubDate>Fri, 09 Apr 2021 07:48:01 GMT</pubDate>
+            <description><![CDATA[iOSアプリのプロトタイプを作ることになり、それがネイティブっぽいUIだったこともあって、いままでUnityでしか作ってなかったiOSアプリをSwiftで作ってみよかな、というのが始めるキッカケ。Unityだとネイティブ機能使うのにライブラリ探したり（有料だと会社にお願いせなあかんのです）、まあ一度ネイティブ触ってた方が今後のためだなーと考えてたもので。あと、らくがきARのAndroid対応が大変だったので（すみません、自分は担当してないですが、横から見てて）、普段iPhone使ってるし、まあAndroidアプリって自分から作ることないかな・・・というのがSwiftを触る気持ちをさらに後押ししたり。そんなこと書いていいのか。まあいいか。続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>whatever.co をリニューアルしたときの話 (2021年版)</title>
+            <link>https://qiita.com/Saqoosha/items/2feab0f096b906b8cdaa</link>
+            <guid>https://qiita.com/Saqoosha/items/2feab0f096b906b8cdaa</guid>
+            <pubDate>Sun, 28 Mar 2021 10:15:13 GMT</pubDate>
+            <description><![CDATA[弊社コーポレートウェブサイト whatever.co [https://whatever.co/] をリニューアルしたときのお話。動機 * もうちょっとちゃんとしたい。 * 遅い   * WORK, NEWS めっちゃ増えた。 * 古い   * ベースが 2015 年につくった dotby.jp のまま。   * React 0.12（...要件 * 最新技術で。]]></description>
+            <author>saqoosha@team-blog-hub.local (Saqoosha)</author>
+        </item>
+        <item>
+            <title>upm 経由でUnity に  firebase をインストール</title>
+            <link>https://qiita.com/kidapu/items/437a17133a95423571ae</link>
+            <guid>https://qiita.com/kidapu/items/437a17133a95423571ae</guid>
+            <pubDate>Mon, 08 Feb 2021 15:05:12 GMT</pubDate>
+            <description><![CDATA[ググっても公式情報がなぜか出てこなかったので、やや怪しい情報であるが、こうやると、Registry が追加されて、インストールできる気がする。スクリーンショット 2021-02-08 16.10.23.png[https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amaz]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>pickle.dumps の引数 protocol に -1 渡すとどうなる？</title>
+            <link>https://zenn.dev/hige/articles/9899a1db67c05d</link>
+            <guid>https://zenn.dev/hige/articles/9899a1db67c05d</guid>
+            <pubDate>Mon, 18 Jan 2021 10:03:21 GMT</pubDate>
+            <description><![CDATA[pickle.dumps の引数 protocol に -1 渡すとどうなる？某所の python なコードを眺めてたときに pickle.dumps の引数 protocol に -1 を渡してるのを見つけて、不思議に思ったのでドキュメント見てみた。プロトコルまわりの定数としては HIGHEST_PROTOCOL と DEFAULT_PROTOCOL のふたつだけで、コンソールで試してみたところどちらも正の整数だった。# python 3.8.1 で検証>>> import pickle>>> pickle.DEFAULT_PROTOC...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>Next.js + Vercel で Basic 認証をかける</title>
+            <link>https://zenn.dev/wtshm/scraps/0a00ef24c438f5</link>
+            <guid>https://zenn.dev/wtshm/scraps/0a00ef24c438f5</guid>
+            <pubDate>Sun, 17 Jan 2021 09:37:38 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Next.js の環境構築</title>
+            <link>https://zenn.dev/wtshm/scraps/ef0664c7efd5bd</link>
+            <guid>https://zenn.dev/wtshm/scraps/ef0664c7efd5bd</guid>
+            <pubDate>Thu, 14 Jan 2021 14:51:51 GMT</pubDate>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>Android で Wi-Fi のインターネットアクセスが検出できない場合に自動接続が効かなくなってしまう問題とその対処</title>
+            <link>https://zenn.dev/wtshm/articles/2eadf857dd86b9</link>
+            <guid>https://zenn.dev/wtshm/articles/2eadf857dd86b9</guid>
+            <pubDate>Thu, 14 Jan 2021 10:53:27 GMT</pubDate>
+            <description><![CDATA[Android 端末上で、Wi-Fi への接続時において、特定のアクセスポイントに自動接続する設定を enabled にしていても、当該の AP がインターネットに接続されていない場合、その AP への自動接続が失敗してしまう、というケースがあります。こういう状態これが問題になる場面はそうめったには訪れないかもしれませんが、たとえば、業務用のキオスクデバイスとして稼働させている Android が、別の端末とローカルネットワーク内で通信しているケースにおいて、一度ネットワークから外れてしまうと、手動で再度繋ぎなおさない限り、通信に失敗してしまう、ということが起こりえます。運用の観点...]]></description>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>IPython と jedi 0.18.0 の組み合わせでハマったメモ</title>
+            <link>https://zenn.dev/hige/articles/282bf79d47378e</link>
+            <guid>https://zenn.dev/hige/articles/282bf79d47378e</guid>
+            <pubDate>Wed, 13 Jan 2021 05:52:08 GMT</pubDate>
+            <description><![CDATA[IPython と jedi 0.18.0 の組み合わせでハマったメモ 2020.02.02 追記こちらの不具合は IPython 7.20 で修正・解消されました！ 元記事新しい環境に pip で Ipython インスコしたところこのバグに遭遇してちょっとハマった。状況としては jedi が deprecated にしていたものを 0.18.0 で remove したことによって出た不具合なんだけども、エラーハンドリング中に IPython 側で別の例外が発生してて、 traceback が読みづらくなっててなかなか気づけなかった。。。IPython 側の不具合含...]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>PhotoShopのテキストレイヤーに小学校で習わない漢字が含まれるかチェックする</title>
+            <link>https://note.com/migifun/n/nc5262775a3c9</link>
+            <guid>https://note.com/migifun/n/nc5262775a3c9</guid>
+            <pubDate>Sat, 09 Jan 2021 02:22:27 GMT</pubDate>
+            <description><![CDATA[子ども向けのインスタレーションやアプリを作ることが多いのですが、PhotoShopデータ内に小学生が習わない漢字が入ってるかチェックしたい！というデザイナーからの要望がありまして、去年末にお試しでJSX書いてみました。続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>動的にリソースIDを取得する2つの方法</title>
+            <link>https://qiita.com/wtshm/items/631f8c215b2bf7931674</link>
+            <guid>https://qiita.com/wtshm/items/631f8c215b2bf7931674</guid>
+            <pubDate>Fri, 08 Jan 2021 06:24:05 GMT</pubDate>
+            <description><![CDATA[静的に定義されたリソース ID をプログラム上から取得する方法です。GETIDENTIFIER を使うResources クラスで定義されている getIdentifier を使います。Resources  |  Android Developers[https://developer.android.com/reference/android/content/res/Resour]]></description>
+            <author>wtshm@team-blog-hub.local (Kenta Watashima)</author>
+        </item>
+        <item>
+            <title>MagicaVoxelで年賀状つくってみた</title>
+            <link>https://note.com/migifun/n/n0a2c7d93221b</link>
+            <guid>https://note.com/migifun/n/n0a2c7d93221b</guid>
+            <pubDate>Sat, 02 Jan 2021 16:33:40 GMT</pubDate>
+            <description><![CDATA[「あ！あれ作りたい！」けど、「いやデザインできませんけどねー！」てのがネックで諦めてしまうことが多い。とはいえ誰かを巻き込むのもめんどくさくて、いつも一人でやれることに着地しちゃう。モデリングとか特にそれ。BlenderとかC4Dとか触りだけゴニョゴニョして、いやこれ楽しいけど気持ちよく触れるようになるまで先長いな…がボワーンボワボワーンと頭に浮かんじゃって、飽き性で困る。続きをみる]]></description>
+            <author>migifun@team-blog-hub.local (Takashi Okada)</author>
+        </item>
+        <item>
+            <title>【Unity】単一シーン/マルチシーンで良い感じに状態管理がしたい</title>
+            <link>https://qiita.com/genkitoyama/items/0ef2cc8927b84c10e947</link>
+            <guid>https://qiita.com/genkitoyama/items/0ef2cc8927b84c10e947</guid>
+            <pubDate>Thu, 17 Dec 2020 15:33:03 GMT</pubDate>
+            <description><![CDATA[はじめにUnityを使ってインタラクティブなインスタレーションをよく作っていますが、ゲーム等と同様に「タイトル画面」→「体験画面」→「結果画面」→「タイトル画面」...のような画面遷移・状態制御をしなければならないことが多くあります。毎回スクラッチで作っていくのもしんどくなってきたので、良い感じにやる方法を調べて、テンプレートにしていきたく、備忘録的にまとめました。UNITYでの状態]]></description>
+            <author>genkitoyama@team-blog-hub.local (Genki Toyama)</author>
+        </item>
+        <item>
+            <title>TouchDesignerだけで非同期通信する方法</title>
+            <link>https://qiita.com/genkitoyama/items/7a3da5ea62d7425b0aef</link>
+            <guid>https://qiita.com/genkitoyama/items/7a3da5ea62d7425b0aef</guid>
+            <pubDate>Sun, 15 Dec 2019 05:58:52 GMT</pubDate>
+            <description><![CDATA[はじめにTouchDesigner(以下TD) ではpythonスクリプトを実行することができますが、HTTP通信のような処理に時間のかかるものだと、その処理が終わるまでちょっと固まってしまいます。このとき、TD全体のタイムラインも止まってしまい描画が更新されない状態になってしまうので、それを防ぐために非同期で通信する方針にしました。ただ非同期で値を取ってきたいだけであれば、TDに加]]></description>
+            <author>genkitoyama@team-blog-hub.local (Genki Toyama)</author>
+        </item>
+        <item>
+            <title>Geometry Shaderのサンプルを解読する（初級編）</title>
+            <link>https://qiita.com/genkitoyama/items/262c5b9c489130eb877d</link>
+            <guid>https://qiita.com/genkitoyama/items/262c5b9c489130eb877d</guid>
+            <pubDate>Wed, 11 Dec 2019 14:01:40 GMT</pubDate>
+            <description><![CDATA[はじめに * Unityでかっこいいエフェクトを作りたい！！ * keijiroさん [https://github.com/keijiro]のエフェクトがめっちゃカッコ良いから参考にしたい！！ * でもテクニックが上級すぎてソース見ても全然わからない！！！！（ごめんなさい）という経験、Unity勢のみなさんなら一度は通ったことがあるのではないでしょうか…？（暴論）この記事では、（]]></description>
+            <author>genkitoyama@team-blog-hub.local (Genki Toyama)</author>
+        </item>
+        <item>
+            <title>gmail でのメルマガのフィルタリングメモ</title>
+            <link>https://qiita.com/kidapu/items/39f6e1084bf7bc32c655</link>
+            <guid>https://qiita.com/kidapu/items/39f6e1084bf7bc32c655</guid>
+            <pubDate>Sat, 07 Jul 2018 05:48:18 GMT</pubDate>
+            <description><![CDATA[* 久しぶりに開く gmail アカウントにメルマガがいっぱい溜まっていて、何がなんだかわからなくなっている！！ * ただ、読みたいメルマガもあるし、いらないメルマガだけはじきたい！！ * 「メール選択」=>「メールの自動振り分け設定」を毎回やってると、フィルタがいっぱいできてわけわからんくなる!!てことがありまして、そのときにやったことですメモです。これが一番いい方法ではないと思い]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Mac OS X で各種アプリのデーモン化</title>
+            <link>https://qiita.com/kidapu/items/2f7f9405e353f0aad770</link>
+            <guid>https://qiita.com/kidapu/items/2f7f9405e353f0aad770</guid>
+            <pubDate>Tue, 17 Apr 2018 15:05:17 GMT</pubDate>
+            <description><![CDATA[インスタレーションなどやるときに、Mac OS X でファイルオープンが必要な各種アプリをデーモン化する方法のメモです。launchd とか、 supervisord とか、いろんなやり方があるぽいのですが、今回は、以下をつかいました * mongroup * automator * スタートアップ項目まず mongroup を install して。npm install -]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>msgpack-c を openFramworks で使う</title>
+            <link>https://qiita.com/kidapu/items/9b12c174bff300b1240a</link>
+            <guid>https://qiita.com/kidapu/items/9b12c174bff300b1240a</guid>
+            <pubDate>Sat, 19 Aug 2017 02:02:15 GMT</pubDate>
+            <description><![CDATA[msgpack-chttps://github.com/msgpack/msgpack-c [https://github.com/msgpack/msgpack-c]HOW TO INSTALL ?(1) XCODE IN MAC の場合 * msgpack-c 配下の include だけ含め プロジェクトファイルのてきとーな場所に追加 * xcode に drag & d]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Linux で openFrameworks を実行するときに便利な shell script</title>
+            <link>https://qiita.com/kidapu/items/e9b410c90dd1c3aeb8de</link>
+            <guid>https://qiita.com/kidapu/items/e9b410c90dd1c3aeb8de</guid>
+            <pubDate>Wed, 05 Jul 2017 12:20:18 GMT</pubDate>
+            <description><![CDATA[こんな感じの shell script を run.sh とかで保存して。# !/bin/shcurdir="${PWD##*/}"rm bin/$curdirmake -j$(nproc)make run特定のアプリケーションのディレクトリへ移動して、以下のコマンド実行してやれば、だいたい動く。$ sh run.sh便利だ！！！！]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Tensorflow Real-Time Object Detection メモ</title>
+            <link>https://qiita.com/kidapu/items/10f9a781b8ba262fa57b</link>
+            <guid>https://qiita.com/kidapu/items/10f9a781b8ba262fa57b</guid>
+            <pubDate>Mon, 03 Jul 2017 05:49:22 GMT</pubDate>
+            <description><![CDATA[Building a Real-Time Object Recognition App with Tensorflow and OpenCV[https://medium.com/towards-data-science/building-a-real-time-object-recognition-app-with-tensorflow-and-opencv-b7a2b4ebdc32]の方の]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Raspberry Pi + Python で全自動体重記録計を作る </title>
+            <link>https://qiita.com/kidapu/items/4ca6528d69130ecd34b4</link>
+            <guid>https://qiita.com/kidapu/items/4ca6528d69130ecd34b4</guid>
+            <pubDate>Sun, 25 Jun 2017 13:33:28 GMT</pubDate>
+            <description><![CDATA[Arduino で全自動体重記録計を作る[http://qiita.com/td2sk/items/56dce27c92b1fbfd63ce]の記事でやられていた、Saluteていう体重計[https://www.amazon.co.jp/%E3%83%8E%E3%83%BC%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%93%81-SALUTE-%E3%82%]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Ubuntu 16.04 に nvidia-docker を install </title>
+            <link>https://qiita.com/kidapu/items/991b672672c53ff367e9</link>
+            <guid>https://qiita.com/kidapu/items/991b672672c53ff367e9</guid>
+            <pubDate>Mon, 10 Apr 2017 16:17:55 GMT</pubDate>
+            <description><![CDATA[まっさらな Ubuntu 16.04 で「ディープラーニングの勉強はじめるぞ〜」な環境を作りたかったので、nvidia-dockerを入れました。これはそのときのメモです。nvidia-docker を入れる前に以下を install しました。 * openssh-server, zsh （個人的な趣味なので、入れる必要は全くない） * docker * nvidia-driver]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>symlinks をしれっと差し替えるメモ</title>
+            <link>https://qiita.com/soundkitchen/items/2a4ca6d20e052945350b</link>
+            <guid>https://qiita.com/soundkitchen/items/2a4ca6d20e052945350b</guid>
+            <pubDate>Sun, 19 Mar 2017 22:01:06 GMT</pubDate>
+            <description><![CDATA[Ubuntu 16.04 にてタイムゾーンを JST にしようと思って見てみたら /etc/localtime がいつのまにか symlinksになってた。結構前から？今までは$ cd /etc$ sudo cp ./localtime ./localtime.orig$ sudo cp /usr/share/zoneinfo/Japan ./localtimeみたいにバックア]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>EC2 にいろいろ環境構築したメモ</title>
+            <link>https://qiita.com/kidapu/items/df46ae065c383850d2c3</link>
+            <guid>https://qiita.com/kidapu/items/df46ae065c383850d2c3</guid>
+            <pubDate>Wed, 01 Feb 2017 04:39:19 GMT</pubDate>
+            <description><![CDATA[久しぶりにプロトタイプ用にサーバーの環境設定をして、2年くらい前に作ったときと色々状況変わってたので、メモりました。ゆとりサーバー設定なので、あんまりちゃんとしたものではないです。この記事で設定した環境 * amazon linux * vim * zsh * php * mysql * phpmyadmin * node.js * nginxAMAZON マシンイメ]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>openFrameworks on the Raspberry Pi での画像、動画、文字表示について</title>
+            <link>https://qiita.com/kidapu/items/11ae1c8469cd3cda5126</link>
+            <guid>https://qiita.com/kidapu/items/11ae1c8469cd3cda5126</guid>
+            <pubDate>Wed, 31 Aug 2016 17:55:11 GMT</pubDate>
+            <description><![CDATA[Raspberry Pi で openFrameworksでグラフィックスまわりがどのくらいいけるのか知りたかったので、とりあえず（１）画像の表示、（２）ムービーの表示、（３）文字の表示についてスーパーざっくり調べました。ためした環境 * ハード : raspberru pi 2 model type b * OS : raspbian jessy * インストールまわりはopen]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>OpenType フォントのプロポーショナルメトリクス情報をぶっこぬく</title>
+            <link>https://qiita.com/kidapu/items/2628d233e49dd9cd3b95</link>
+            <guid>https://qiita.com/kidapu/items/2628d233e49dd9cd3b95</guid>
+            <pubDate>Mon, 11 Jul 2016 05:03:57 GMT</pubDate>
+            <description><![CDATA[Saqooshaさんの「OpenType フォントのカーニング情報をぶっこぬく[http://qiita.com/Saqoosha/items/8a9bb825e02db770408e]」という記事の最後に> palt があるならそれもちゃんと処理しないといけない。OTF 複雑すぎ、、、と書いてあって。Saqooshaさんの記事を参考に、paltと、それに関連するhaltテーブルの情報を]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>MacでPC内部で鳴っている音楽を聞きながら録音する方法</title>
+            <link>https://qiita.com/kidapu/items/4fcc7950a7f3e0478903</link>
+            <guid>https://qiita.com/kidapu/items/4fcc7950a7f3e0478903</guid>
+            <pubDate>Fri, 10 Jun 2016 20:40:09 GMT</pubDate>
+            <description><![CDATA[MacのQuick TimeでFile->New ScreenRecordingすると、録画しながら、音も録音できますが、マイクがデフォルト設定ではbuild-inマイクになっており、外の環境音まで拾っちゃいます。解決策1.SOUND FLOWERをINSTALLする * ここ [https://github.com/mattingalls/Soundflower/releases/]]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Photoshopでカラコレ用のLUTテクスチャを作る</title>
+            <link>https://qiita.com/asus4/items/673bed086408781783db</link>
+            <guid>https://qiita.com/asus4/items/673bed086408781783db</guid>
+            <pubDate>Fri, 10 Jun 2016 06:53:32 GMT</pubDate>
+            <description><![CDATA[すごい簡単なんだけど、UnityとかUEとかoFとかで使うエンジニアが、デザイナーの方に伝えるとき用に書きました。0. LUTテクスチャ？UnrealEngineのドキュメントにわかりやすい説明が載ってます。https://docs.unrealengine.com/latest/JPN/Engine/Rendering/PostProcessEffects/ColorGradin]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Stemsファイルの各チャンネルの中身を取り出すコマンド</title>
+            <link>https://qiita.com/asus4/items/17671e7011d6ad0cc69d</link>
+            <guid>https://qiita.com/asus4/items/17671e7011d6ad0cc69d</guid>
+            <pubDate>Mon, 06 Jun 2016 09:34:29 GMT</pubDate>
+            <description><![CDATA[Stemsフォーマットって聞いたことしかなく、使ったことなかったのだけど。http://www.stems-music.com/ja/stems-is-for-djs-jp/[http://www.stems-music.com/ja/stems-is-for-djs-jp/]4ch分、個別にミックス前のトラックが入ったフォーマットらしい。ほぼDJ用。stemsのサンプルファイルもここか]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>maxのきほんてきなobjectのメモ</title>
+            <link>https://qiita.com/kidapu/items/2ef5dca1d015e53b2533</link>
+            <guid>https://qiita.com/kidapu/items/2ef5dca1d015e53b2533</guid>
+            <pubDate>Tue, 10 May 2016 20:05:41 GMT</pubDate>
+            <description><![CDATA[公式ドキュメント[https://docs.cycling74.com/max7/]を検索すれば、以下意外にもすごいいっぱいあるのですが、ざつに概観をつかむために、ハイパー初心者の私が書いたメモです。UI * umenu : dropdownメニュー * key : キーボード入力をレポートするOBJECT指向系 * p,patcher : inletとoutletをつなげ]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>openFrameworksを使うためのXcodeの環境設定メモ</title>
+            <link>https://qiita.com/kidapu/items/166e4bf0f6786875d34a</link>
+            <guid>https://qiita.com/kidapu/items/166e4bf0f6786875d34a</guid>
+            <pubDate>Sun, 08 May 2016 16:53:11 GMT</pubDate>
+            <description><![CDATA[openframeworksをXcodeで使う時の環境設定をいい感じにしたいと思って、以下をやりました。あんまり調べられてないので、いい方法があったら教えて頂けると嬉しいです。特にXcode7のコード補完が死ぬほど遅い気がしているのでなんとかしたいです。XCODEプラグイン * Alcatraz : プラグインのパッケージマネージャー。これを入れたら以下のプラグインはみつけられる。絶対い]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>boto3 で ec2 の自分に割り当てられたタグを読み込む</title>
+            <link>https://qiita.com/soundkitchen/items/31e2e27a0e5c253df511</link>
+            <guid>https://qiita.com/soundkitchen/items/31e2e27a0e5c253df511</guid>
+            <pubDate>Thu, 25 Feb 2016 11:32:13 GMT</pubDate>
+            <description><![CDATA[ec2 に用意されてるタグ機能。環境変数っぽく使うと地味に便利。特定のタグを見て、アプリケーション側で読み込む設定ファイルを実行時に変える。とかとか。ec2 には自分のメタデータを取得する API[http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ec2-instance-metadata.html]が用意されてるので、これと]]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>python でテキトーにパスワード生成</title>
+            <link>https://qiita.com/soundkitchen/items/bec5ba87d92457543823</link>
+            <guid>https://qiita.com/soundkitchen/items/bec5ba87d92457543823</guid>
+            <pubDate>Tue, 23 Feb 2016 19:12:12 GMT</pubDate>
+            <description><![CDATA[string モジュールには色んなカテゴリの文字の集合が定義されてる。console>>> import string>>> string.ascii_letters'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'>>> string.ascii_uppercase'ABCDEFGHIJKLMNOPQRSTUVWXYZ']]></description>
+            <author>hige@team-blog-hub.local (Takanobu Izukawa)</author>
+        </item>
+        <item>
+            <title>Raspberry Pi の Image を SD カードに import・export する方法</title>
+            <link>https://qiita.com/kidapu/items/62cc66ab001e0cfb5c59</link>
+            <guid>https://qiita.com/kidapu/items/62cc66ab001e0cfb5c59</guid>
+            <pubDate>Tue, 16 Feb 2016 10:44:32 GMT</pubDate>
+            <description><![CDATA[RaspberryPiのSDカードをバックアップ・リストアする[http://lotuseater365.tumblr.com/post/96620739773/raspberrypi%E3%81%AEsd%E3%82%AB%E3%83%BC%E3%83%89%E3%82%92%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%83]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+        <item>
+            <title>Macで展示とかするときのdotfiles風な。</title>
+            <link>https://qiita.com/asus4/items/d8e33f06fef1bf85fcc9</link>
+            <guid>https://qiita.com/asus4/items/d8e33f06fef1bf85fcc9</guid>
+            <pubDate>Tue, 08 Dec 2015 08:23:22 GMT</pubDate>
+            <description><![CDATA[展示するときに、必要なMacの設定をできるだけ自動化したいなとまとめました。きっとEl Capitanで動くと思います。setup_mac_signage.sh# 自動更新OFFecho "Disable : SystemPreferences -> AppStore -> Automatically check for updates"defaults write /Librar]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>[Unity] MiniJsonをちょっと楽にするスクリプト</title>
+            <link>https://qiita.com/asus4/items/bac121c34cd3169116c0</link>
+            <guid>https://qiita.com/asus4/items/bac121c34cd3169116c0</guid>
+            <pubDate>Sun, 22 Feb 2015 06:01:46 GMT</pubDate>
+            <description><![CDATA[Unity(C#)でjsonったら * LitJson [http://lbv.github.io/litjson/] : 型指定して、クラスor構造体に変換する。大型プロジェクトで使うかも * MiniJson [https://gist.github.com/darktable/1411710] : object型にする。ゆるく使いたい。LitJsonは完全に型安全にパースできるけど]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Macで、FAT16フォーマットをする方法</title>
+            <link>https://qiita.com/asus4/items/ebf394dc66637fe2392a</link>
+            <guid>https://qiita.com/asus4/items/ebf394dc66637fe2392a</guid>
+            <pubDate>Sat, 29 Nov 2014 14:42:12 GMT</pubDate>
+            <description><![CDATA[ディスクユーティリティだとFAT32はできますが、FAT16フォーマットは出来ないよう。とあるArduinoで必要だったので、手順まとめました。1 ターミナルアプリを開くApplication/Terminal.app2 ディスクのIDを確認するターミナルで、↓うつ。diskutil listすると、/dev/disk0#:]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>soxで全部の音をノーマライズ</title>
+            <link>https://qiita.com/asus4/items/0540445362e7eef3491f</link>
+            <guid>https://qiita.com/asus4/items/0540445362e7eef3491f</guid>
+            <pubDate>Tue, 22 Jul 2014 17:17:44 GMT</pubDate>
+            <description><![CDATA[SOXをインストールbrew install soxスクリプトnormalize.zsh# !/bin/zsh# NEED sox# brew install soxEXPORT_DIR=normalized# input folderfunction mkdir_ex() {    # create folder    if [ ! -d $1 ]]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Unity 5.1サラウンド （Mac）</title>
+            <link>https://qiita.com/asus4/items/b9c6f4dbfa4b985ccd2a</link>
+            <guid>https://qiita.com/asus4/items/b9c6f4dbfa4b985ccd2a</guid>
+            <pubDate>Wed, 16 Jul 2014 10:34:41 GMT</pubDate>
+            <description><![CDATA[Unityでサラウンド再生したいなー。でもできるかな～って要件があったので調べました。オーディオインターフェイスを用意そもそも5.1ch再生するには、6ch以上のアウトのあるオーディオインターフェイスが必要です。今回はちょっと古いですが、FA-66で検証。Firewire to Thunderbolt変換で、MacbookPro OS10.9.4へ5.jpg[https://qi]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>My Swift Snipets</title>
+            <link>https://qiita.com/asus4/items/15f843c39929aedd3013</link>
+            <guid>https://qiita.com/asus4/items/15f843c39929aedd3013</guid>
+            <pubDate>Thu, 10 Jul 2014 09:57:34 GMT</pubDate>
+            <description><![CDATA[SwiftでMacアプリをつくっていて、ちょっとハマった所。スニペットにしてまとめました。随時更新予定。GCDgcd_sample.swift// dispatch_get_main_queueは廃止// 5秒後にlet offset = 5.0dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(offset * D]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>[Mac]Otoyaさん、Kyokoさんで日本語をしゃべる設定</title>
+            <link>https://qiita.com/asus4/items/b5bbc1c7b31a6d4e2dee</link>
+            <guid>https://qiita.com/asus4/items/b5bbc1c7b31a6d4e2dee</guid>
+            <pubDate>Wed, 02 Jul 2014 12:28:15 GMT</pubDate>
+            <description><![CDATA[1.環境設定 DICTATION & SPEECHScreen Shot 2014-07-02 at 20.48.46.png[https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F14330%2Fa330dec3-0027-870b-2f98-4e635d91]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Unityでアルファ付きのムービーを再生したい</title>
+            <link>https://qiita.com/asus4/items/cdae1f7063d6dbc97671</link>
+            <guid>https://qiita.com/asus4/items/cdae1f7063d6dbc97671</guid>
+            <pubDate>Sun, 29 Jun 2014 20:10:22 GMT</pubDate>
+            <description><![CDATA[forum.unity3d.com[http://forum.unity3d.com/threads/video-texture-with-alpha-channel-works-but.41269/]２つのムービーを用意して、ひとつはRGB、もう一つはAのみのムービーを、同時に再生してシェーダーで混ぜるとあった。実際に試してみると、ムービーを２つ再生するのが、重いし、同期の確実性]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Tips エディタ 配列フィールドの超簡単なソート</title>
+            <link>https://qiita.com/asus4/items/f796ddb42025ddecffe7</link>
+            <guid>https://qiita.com/asus4/items/f796ddb42025ddecffe7</guid>
+            <pubDate>Tue, 24 Jun 2014 10:31:50 GMT</pubDate>
+            <description><![CDATA[Unityの配列フィールドに複数のオブジェクトをぶち込むと、全然ソートされずによくわからん順番になるのですが。OnValidateメソッドで、ソートしてあげれば簡単！ということに気づきました。SampleUnityPropertySort.csusing UnityEngine;using System.Collections;using System.Linq;public]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Unity Macでマルチスクリーン＆フルスクリーン。</title>
+            <link>https://qiita.com/asus4/items/3c8187970f498c525524</link>
+            <guid>https://qiita.com/asus4/items/3c8187970f498c525524</guid>
+            <pubDate>Thu, 12 Jun 2014 15:03:05 GMT</pubDate>
+            <description><![CDATA[色々調べると、Unityのフルスクリーンで、マルチスクリーンは出来ないってのが定石のようだったので。諦めるのは悔しいので、サイネージで使うネイティブ拡張機能をまとめたリポジトリ公開しました。Githubリポジトリ [https://github.com/asus4/UnitySignageKit]まだ実践投入してないですが、こんな感じ。３画面テストまでは成功。capture[http]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>[Mac] キーイベントを発火する。</title>
+            <link>https://qiita.com/asus4/items/a2517aed8dc7e4773c34</link>
+            <guid>https://qiita.com/asus4/items/a2517aed8dc7e4773c34</guid>
+            <pubDate>Fri, 30 May 2014 09:03:53 GMT</pubDate>
+            <description><![CDATA[Macネイティブのキーイベントなので、他のアプリにも送れます。テキストエディット開いていると勝手に文字を打ち始めます。sample.m- (void) keyEmulate {    CGEventRef keyup, keydown;    keydown = CGEventCreateKeyboardEvent (NULL, (CGKeyCode)40, true);]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Windows8 必要な画像たち</title>
+            <link>https://qiita.com/asus4/items/c1f24d078576e124e626</link>
+            <guid>https://qiita.com/asus4/items/c1f24d078576e124e626</guid>
+            <pubDate>Tue, 20 May 2014 06:44:03 GMT</pubDate>
+            <description><![CDATA[windows8 ストアアプリでは様々な解像度に対応するため、iOSの@2x [/2x]より多い、4種画像を用意できます。用意しなくてもいいですが、ピクセル等倍あると綺麗です。名前のルール * Logo.scale-80.png * Logo.scale-100.png * Logo.scale-140.png * Logo.scale-180.pngッて感じで、*.sca]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>PD for iOS版にないオブジェクトの追加の仕方。</title>
+            <link>https://qiita.com/asus4/items/c758aaa560c458d9bbb9</link>
+            <guid>https://qiita.com/asus4/items/c758aaa560c458d9bbb9</guid>
+            <pubDate>Thu, 03 Apr 2014 10:07:42 GMT</pubDate>
+            <description><![CDATA[PureDataには、libpdプロジェクトってのがあってpd-for-iosを使うと、iOSで色々なシンセサイザーが作れます。Androidでも作れる。libpdすてき。Github pd-for-ios [https://github.com/libpd/pd-for-ios]Mac版はここからダウンロード可能。Pd-extended [http://puredata.info]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Macアプリを開いている間はスリープさせない２行。</title>
+            <link>https://qiita.com/asus4/items/02b5096a937bbd419f3e</link>
+            <guid>https://qiita.com/asus4/items/02b5096a937bbd419f3e</guid>
+            <pubDate>Tue, 01 Apr 2014 08:43:53 GMT</pubDate>
+            <description><![CDATA[サイネージ用アプリ、VJアプリなんかを作るときに、いちいちMacの省エネルギー、スクリーンセーバーを変えるのはイケてないので。アプリが開いている間はスリープしないようにする設定。使い方SampleAppDelegate.m# import "LittleCaffeine.h"- (void)applicationDidFinishLaunching:(NSNotificat]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>iOSで1秒未満のバイブレーション</title>
+            <link>https://qiita.com/asus4/items/8a4ae90d5e8c254ecb8d</link>
+            <guid>https://qiita.com/asus4/items/8a4ae90d5e8c254ecb8d</guid>
+            <pubDate>Thu, 27 Mar 2014 23:01:13 GMT</pubDate>
+            <description><![CDATA[Androidなら細かいバイブレーション制御できるのに。って思っていましたが。iOSでもこうやれば出来ました。カスタムバイブレーション機能をプログラムから使う方法ないのかな。]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>openFrameworksでジェスチャ認識</title>
+            <link>https://qiita.com/asus4/items/b046c93d12ec7e803d55</link>
+            <guid>https://qiita.com/asus4/items/b046c93d12ec7e803d55</guid>
+            <pubDate>Sun, 15 Dec 2013 11:10:18 GMT</pubDate>
+            <description><![CDATA[つつみさんがなにやらoFを始めるということで、一日くらい混ぜてもらおうと。最近いろいろと試しているGRTというジェスチャ解析ライブラリの紹介です。ジェスチャ認識とはなんぞや理系じゃないので、正しくはないですが、ふんわりこんな感じなのかな↓ジェスチャ認識とは1.パソコンに正解パターンを沢山教える。→ Classfication2.入力した信号が、どのパターンに似ていたか判定する]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>GPSって実際どれほどの精度なのか試してみた</title>
+            <link>https://qiita.com/asus4/items/ecc3023ef8745e1ddea7</link>
+            <guid>https://qiita.com/asus4/items/ecc3023ef8745e1ddea7</guid>
+            <pubDate>Wed, 04 Dec 2013 02:07:34 GMT</pubDate>
+            <description><![CDATA[たまたまGPSを使う要件がありまして、GPSがどこまでいけるのか検証してみました。結論からいうと、かなりよい。モジュールはスパークファンから購入したAdafruit Ultimate 66チャンネル10Hz GPSモジュール Version 3[http://www.switch-science.com/catalog/1085/]このライブラリ [https://github.]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>picojsonを使ってoF環境設定ファイルを読み書き</title>
+            <link>https://qiita.com/asus4/items/641fc63348c0dfa5c797</link>
+            <guid>https://qiita.com/asus4/items/641fc63348c0dfa5c797</guid>
+            <pubDate>Mon, 02 Dec 2013 11:50:58 GMT</pubDate>
+            <description><![CDATA[ofxXmlSettingが使いにくかったので、picojson使ってみました。config.json{	"LV":3,	"HP":1,	"MP":1,	"sleepy":false,	"hungry":true,	"status":"カレー食べたい"}こんな感じのjsonファイルを用意して、testApp.cpp//testapp.cpp# incl]]></description>
+            <author>asus4@team-blog-hub.local (Koki Ibukuro)</author>
+        </item>
+        <item>
+            <title>Cloud Watch カスタマイズ on Cent5.6</title>
+            <link>https://qiita.com/kidapu/items/e46be8ae66064f1f4657</link>
+            <guid>https://qiita.com/kidapu/items/e46be8ae66064f1f4657</guid>
+            <pubDate>Wed, 14 Aug 2013 02:47:08 GMT</pubDate>
+            <description><![CDATA[以下、記事にしたがって、Cloud Watchをカスタマイズしようと思った。http://thinking.ne.jp/2013/01/aws-cloudwatch-ec2/[http://thinking.ne.jp/2013/01/aws-cloudwatch-ec2/]ら、２点つまったメモ。①jdkが入ってなかったぽいので、installyum install java-1.7]]></description>
+            <author>kidapu@team-blog-hub.local (Tatsuya Kida)</author>
+        </item>
+    </channel>
+</rss>
