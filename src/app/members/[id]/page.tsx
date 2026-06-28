@@ -25,10 +25,10 @@ export default async function MemberPage({ params }: { params: Promise<{ id: str
   return (
     <>
       <MemberProfileHeader member={member} postCount={posts.length} />
-      <div className="grid grid-cols-[92px_52px_1fr_110px] gap-[18px] pt-6 pb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
-        <span>Date</span><span></span><span>Title</span><span className="text-right">Source</span>
+      <div className="grid grid-cols-[92px_52px_1fr] gap-[18px] pt-6 pb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
+        <span>Date</span><span></span><span>Title</span>
       </div>
-      {posts.map((p) => <PostRow key={p.link} post={p} member={member} />)}
+      {posts.map((p) => <PostRow key={p.link} post={p} member={member} showAuthor={false} />)}
       {posts.length === 0 && (
         <p className="py-12 text-center font-mono text-[color:var(--color-text-muted)]">
           No posts yet.

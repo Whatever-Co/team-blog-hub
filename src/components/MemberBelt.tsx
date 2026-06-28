@@ -8,7 +8,7 @@ export function MemberBelt({ members }: { members: Member[] }) {
         Members
       </span>
       {members.map((m) => (
-        <Link key={m.id} href={`/members/${m.id}`} title={m.name}>
+        <Link key={m.id} href={`/members/${m.id}/`} title={m.name}>
           <img
             src={m.avatarSrc}
             alt={m.name}

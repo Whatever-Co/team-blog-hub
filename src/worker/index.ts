@@ -1,7 +1,6 @@
 export interface Env {
   ASSETS: Fetcher;
-  BUILD_HOOK_URL: string;
-  SITE_ORIGIN: string;
+  BUILD_HOOK_URL?: string;
 }
 
 export default {
@@ -11,17 +10,23 @@ export default {
 
   async scheduled(_event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
     if (!env.BUILD_HOOK_URL) {
-      console.error("[cron] BUILD_HOOK_URL is not set");
-      return;
+      throw new Error("[cron] BUILD_HOOK_URL is not set");
     }
+    const hookUrl = env.BUILD_HOOK_URL;
     ctx.waitUntil(
-      fetch(env.BUILD_HOOK_URL, { method: "POST" }).then(async (res) => {
-        if (!res.ok) {
-          console.error(`[cron] deploy hook failed: ${res.status} ${await res.text()}`);
-        } else {
+      (async () => {
+        try {
+          const res = await fetch(hookUrl, { method: "POST" });
+          if (!res.ok) {
+            const body = await res.text().catch(() => "<unreadable body>");
+            throw new Error(`[cron] deploy hook failed: ${res.status} ${body}`);
+          }
           console.log(`[cron] deploy hook triggered: ${res.status}`);
+        } catch (err) {
+          console.error("[cron] deploy hook error:", err);
+          throw err;
         }
-      })
+      })()
     );
   },
-};
+} satisfies ExportedHandler<Env>;

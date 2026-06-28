@@ -5,9 +5,10 @@ export const config = {
     description: "Whatever Co. Dev Team Blog",
   },
   siteRoot:
-    process.env.NODE_ENV === "production"
+    process.env.SITE_ORIGIN ||
+    (process.env.NODE_ENV === "production"
       ? "https://team-blog-hub.workers.dev"
-      : "http://localhost:3000",
+      : "http://localhost:3000"),
   headerLinks: [
     { title: "About", href: "/about" },
     { title: "Members", href: "/members" },

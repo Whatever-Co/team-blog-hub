@@ -11,8 +11,8 @@ export function Header() {
           WHATEVER/DEV-BLOG
         </Link>
         <nav className="flex gap-5 font-mono text-[11px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
-          <Link href="/about" className="hover:text-[color:var(--color-text)]">About</Link>
-          <Link href="/members" className="hover:text-[color:var(--color-text)]">Members</Link>
+          <Link href="/about/" className="hover:text-[color:var(--color-text)]">About</Link>
+          <Link href="/members/" className="hover:text-[color:var(--color-text)]">Members</Link>
           <a
             href="/feed.xml"
             target="_blank"

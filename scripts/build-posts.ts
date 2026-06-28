@@ -25,44 +25,78 @@ export function normalizeFeedItem(
   let parsed: URL;
   try { parsed = new URL(link); } catch { return null; }
   if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return null;
+  if (!isoDate) {
+    console.warn(`[build-posts] dropping post with missing isoDate: ${link}`);
+    return null;
+  }
+  const dateMiliSeconds = new Date(isoDate).getTime();
+  if (Number.isNaN(dateMiliSeconds)) {
+    console.warn(`[build-posts] dropping post with invalid isoDate "${isoDate}": ${link}`);
+    return null;
+  }
   return {
     authorId,
     authorName,
     title,
     link,
     isoDate,
-    dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
+    dateMiliSeconds,
     contentSnippet: contentSnippet?.replace(/\n/g, ""),
-    sourceHost: extractSourceHost(link),
+    sourceHost: parsed.hostname.replace(/^www\./, ""),
   };
 }
 
-async function fetchMember(member: Member, parser: Parser): Promise<PostItem[]> {
-  if (!member.sources?.length) return [];
+async function fetchMember(member: Member, parser: Parser): Promise<{ items: PostItem[]; failed: string[] }> {
+  if (!member.sources?.length) return { items: [], failed: [] };
   const items: PostItem[] = [];
+  const failed: string[] = [];
+
+  let includeRe: RegExp | undefined;
+  let excludeRe: RegExp | undefined;
+  try {
+    includeRe = member.includeUrlRegex ? new RegExp(member.includeUrlRegex) : undefined;
+    excludeRe = member.excludeUrlRegex ? new RegExp(member.excludeUrlRegex) : undefined;
+  } catch (err) {
+    throw new Error(`[build-posts] member ${member.id} has invalid regex: ${(err as Error).message}`);
+  }
+
   for (const url of member.sources) {
+    let feed;
     try {
-      const feed = await parser.parseURL(url);
-      for (const raw of feed.items ?? []) {
-        const norm = normalizeFeedItem(raw, member.id, member.name);
-        if (norm) items.push(norm);
-      }
+      feed = await parser.parseURL(url);
     } catch (err) {
       console.warn(`[build-posts] failed to fetch ${url}:`, (err as Error).message);
+      failed.push(url);
+      continue;
+    }
+    for (const raw of feed.items ?? []) {
+      const norm = normalizeFeedItem(raw, member.id, member.name);
+      if (norm) items.push(norm);
     }
   }
-  return items
-    .filter((p) => !member.includeUrlRegex || new RegExp(member.includeUrlRegex).test(p.link))
-    .filter((p) => !member.excludeUrlRegex || !new RegExp(member.excludeUrlRegex).test(p.link));
+
+  const filtered = items
+    .filter((p) => !includeRe || includeRe.test(p.link))
+    .filter((p) => !excludeRe || !excludeRe.test(p.link));
+
+  return { items: filtered, failed };
 }
 
 async function main() {
   const parser = new Parser();
-  const all: PostItem[] = [];
-  for (const member of members) {
-    const items = await fetchMember(member, parser);
-    all.push(...items);
+  const results = await Promise.all(members.map((m) => fetchMember(m, parser)));
+  const all = results.flatMap((r) => r.items);
+  const failed = results.flatMap((r) => r.failed);
+  const totalSources = members.flatMap((m) => m.sources ?? []).length;
+
+  if (failed.length > 0) {
+    if (failed.length / totalSources > 0.5) {
+      console.error(`[build-posts] more than 50% of RSS sources failed (${failed.length}/${totalSources}):`, failed);
+      process.exit(1);
+    }
+    console.warn(`[build-posts] some RSS sources failed (${failed.length}/${totalSources}):`, failed);
   }
+
   all.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
   const outPath = path.resolve(".contents/posts.json");
   fs.ensureDirSync(path.dirname(outPath));

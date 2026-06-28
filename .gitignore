@@ -37,6 +37,10 @@ yarn-error.log*
 # generated data
 /.contents
 
+# build-time generated feeds
+/public/feed.xml
+/public/feed.atom
+
 # brainstorming companion
 .superpowers/
 

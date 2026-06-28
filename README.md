@@ -17,6 +17,7 @@ pnpm build:feeds     # RSS/Atom フィード生成
 pnpm dev             # Next.js dev server (http://localhost:3000)
 pnpm build           # 静的 export (out/)
 pnpm test            # Vitest
+pnpm lint            # tsc --noEmit (typecheck)
 ```
 
 ## Configuration
@@ -24,6 +25,8 @@ pnpm test            # Vitest
 - `members.ts` — メンバーと RSS ソース定義
 - `site.config.ts` — サイトメタ情報・ヘッダリンク
 - `src/app/globals.css` — デザイントークン (Tailwind v4 `@theme`)
+
+`SITE_ORIGIN` を Cloudflare Workers Builds のビルド時環境変数として設定する（例: `https://dev-blog.whatever.co`）。RSS フィードと metadata が本番 origin を使う。
 
 ## Deployment
 
@@ -42,7 +45,7 @@ pnpm deploy
    ```bash
    pnpm wrangler secret put BUILD_HOOK_URL
    ```
-4. 本番ドメインを Custom Domain として割り当て、`wrangler.toml` と `site.config.ts` の `SITE_ORIGIN` / `siteRoot` を更新
+4. 本番ドメインを Custom Domain として割り当て、`site.config.ts` の `siteRoot`（`SITE_ORIGIN` ビルド env 経由）を更新
 
 ### Cron
 

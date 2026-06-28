@@ -5,12 +5,13 @@
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev": "next dev",
+    "predev": "pnpm build:posts",
     "prebuild": "pnpm build:posts && pnpm build:feeds",
     "build": "next build",
     "build:posts": "tsx scripts/build-posts.ts",
     "build:feeds": "tsx scripts/build-feeds.ts",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "deploy": "pnpm build && wrangler deploy"

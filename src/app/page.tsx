@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Hero memberCount={members.length} postCount={posts.length} />
-      <Suspense>
+      <Suspense fallback={null}>
         <PostList posts={posts} members={members} />
       </Suspense>
     </>

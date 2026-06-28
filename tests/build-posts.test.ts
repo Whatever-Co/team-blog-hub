@@ -7,6 +7,10 @@ describe("extractSourceHost", () => {
     expect(extractSourceHost("https://www.qiita.com/x")).toBe("qiita.com");
     expect(extractSourceHost("not a url")).toBe("");
   });
+
+  it("only strips literal www. prefix", () => {
+    expect(extractSourceHost("https://www2.example.com")).toBe("www2.example.com");
+  });
 });
 
 describe("normalizeFeedItem", () => {
@@ -17,6 +21,22 @@ describe("normalizeFeedItem", () => {
 
   it("returns null for non-http(s) links", () => {
     expect(normalizeFeedItem({ title: "Hi", link: "javascript:alert(1)" }, "alice", "Alice")).toBeNull();
+  });
+
+  it("returns null when isoDate is missing", () => {
+    expect(
+      normalizeFeedItem({ title: "Hi", link: "https://x.com/a" }, "alice", "Alice")
+    ).toBeNull();
+  });
+
+  it("returns null when isoDate is invalid", () => {
+    expect(
+      normalizeFeedItem(
+        { title: "Hi", link: "https://x.com/a", isoDate: "totally invalid" },
+        "alice",
+        "Alice"
+      )
+    ).toBeNull();
   });
 
   it("returns normalized PostItem with sourceHost", () => {
