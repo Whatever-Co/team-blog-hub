@@ -187,6 +187,13 @@ RSS feeds → scripts/build-posts.ts → .contents/posts.json
 - 原因: 生成物が `out/about/index.html` なので、リンクも `/about/` で終わる必要がある
 - 修正: `Header.tsx` `MemberBelt.tsx` 内のすべての内部リンクに trailing slash を付ける
 
+### git push で Cloudflare Workers Builds が走らない（webhook が届かない）
+- 症状: `git push origin main` しても Cloudflare のビルド履歴に出てこない、GitHub commit に `Workers Builds: team-blog-hub` の check-run が付かない、Settings で「This project is disconnected from your Git account.」警告が消えない
+- 原因: Cloudflare の Worker setup wizard で repo を選んだだけでは GitHub App `cloudflare-workers-and-pages` (installation id `26564529`) の **selected repositories に team-blog-hub が自動追加されない**。Cloudflare 側で connect 設定があっても、GitHub App に repo access が無いと push event を Cloudflare に送らない
+- 確認: `gh api orgs/Whatever-Co/installations` で `repository_selection: "selected"` なら、対象 repo が selected list に含まれてるか確認が必要（list 自体は app 認証必要で `gh` では取れない、ブラウザで見る）
+- 修正: https://github.com/organizations/Whatever-Co/settings/installations/26564529 → "Repository access" で team-blog-hub を追加 → Save。直後の push で check-run が即座（1 秒以内）に立つ
+- Cloudflare ダッシュボードでの Disconnect → Reconnect は**この問題を直さない**（Cloudflare 側の state だけ更新するため）
+
 ### `wrangler secret put` が「unable to select account in non-interactive mode」で死ぬ
 - 症状: `saqoosha@whatever.co` ユーザーが個人アカウントと `Whatever Co.` の両方に属していて wrangler が選べない
 - 修正: `wrangler.toml` に `account_id = "c21a10f70a8036d2ad10687ab83bfb4b"` を書く（コミット済み）
