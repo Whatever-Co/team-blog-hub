@@ -7,7 +7,10 @@ export const members: Member[] = [
     role: "CTO, Programmer",
     bio: "",
     avatarSrc: "/avatars/saqoosha.jpg",
-    sources: ["https://qiita-feed.saqoosha.workers.dev/saqoosha",],
+    sources: [
+      "https://zenn.dev/saqoosha/feed?include_scraps=1",
+      "https://qiita-feed.saqoosha.workers.dev/saqoosha",
+    ],
     twitterUsername: "Saqoosha",
     githubUsername: "saqoosha",
     websiteUrl: "https://saqoo.sh/a",
