@@ -1,0 +1,16 @@
+# SITE_ORIGIN is set as a Workers Builds environment variable (not a runtime var),
+# so that prebuild's `build:feeds` and Next's metadataBase pick up the production origin.
+# BUILD_HOOK_URL is a runtime secret (wrangler secret put BUILD_HOOK_URL).
+
+name = "team-blog-hub"
+main = "src/worker/index.ts"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./out"
+binding = "ASSETS"
+not_found_handling = "404-page"
+
+[triggers]
+crons = ["0 17 * * *"]

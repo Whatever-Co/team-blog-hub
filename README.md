@@ -1,34 +1,56 @@
 # Team Blog Hub
 
-![Demo](https://user-images.githubusercontent.com/34590683/96832331-8c289400-1479-11eb-9466-f24d30860a24.png)
+Whatever Co. のエンジニアによるブログ記事を集約したサイト。
 
-企業/チームのためのブログ・スターターです。Forkしてご自由にお使いください。
+## Stack
 
-ブログのRSSのURLを登録することで、チームメンバーの投稿を一覧にまとめて表示します。Zenn、Qiita、Medium、note、はてなブログなど、RSSフィードを取得できるサイトであれば、メンバーは好きな場所に投稿できます。
-
-詳しくは下記の記事をご覧ください。
-
-[チーム個々人のテックブログをRSSで集約するサイトを作った →](https://zenn.dev/catnose99/articles/cb72a73368a547756862)
-
-## Demo
-https://team-blog-hub.vercel.app
+- Next.js 15 (App Router) + React 19 + TypeScript + Tailwind CSS v4
+- 静的 export → Cloudflare Workers (Static Assets binding)
+- 日次の RSS 取り込み & 再デプロイは Cloudflare Cron Trigger + Workers Builds Deploy Hook
 
 ## Development
+
 ```bash
-$ yarn install
-$ yarn build
-$ yarn dev
+pnpm install
+pnpm build:posts     # RSS 取得 (.contents/posts.json)
+pnpm build:feeds     # RSS/Atom フィード生成
+pnpm dev             # Next.js dev server (http://localhost:3000)
+pnpm build           # 静的 export (out/)
+pnpm test            # Vitest
+pnpm lint            # tsc --noEmit (typecheck)
 ```
 
-- サイトの基本設定は`site.config.ts`で行います。
-- メンバーのプロフィールやRSSの登録は`members.ts`で行います。
-- 配色を変更するには`src/styles/variables.scss`を書き換えます。
-- ロゴなどの画像を変更するには`public`内のファイルを置き換えます。
+## Configuration
 
-その他、ご自由にコードを書き換えてください。
+- `members.ts` — メンバーと RSS ソース定義
+- `site.config.ts` — サイトメタ情報・ヘッダリンク
+- `src/app/globals.css` — デザイントークン (Tailwind v4 `@theme`)
+
+`SITE_ORIGIN` を Cloudflare Workers Builds のビルド時環境変数として設定する（例: `https://dev-blog.whatever.co`）。RSS フィードと metadata が本番 origin を使う。
 
 ## Deployment
-VercelやNetlifyにデプロイすることを推奨します。`yarn build`を実行することで、RSSからの投稿データの取得とサイトのビルドが行われます。1日に1回などの頻度で自動デプロイするのが良いかもしれません。
 
-## Licence
+通常は `git push origin main` で Cloudflare Workers Builds が自動ビルド & デプロイ。
+
+手動デプロイ:
+```bash
+pnpm deploy
+```
+
+### Setup (one-time)
+
+1. Cloudflare ダッシュボードで Workers Builds を有効化し、この GitHub リポジトリを接続
+2. Workers Builds の設定で Deploy Hook URL を作成
+3. その URL を Worker のシークレットに登録:
+   ```bash
+   pnpm wrangler secret put BUILD_HOOK_URL
+   ```
+4. 本番ドメインを Custom Domain として割り当て、`site.config.ts` の `siteRoot`（`SITE_ORIGIN` ビルド env 経由）を更新
+
+### Cron
+
+`wrangler.toml` の `[triggers]` で `0 17 * * *`（UTC = JST 02:00）に設定。Worker の `scheduled` handler が `BUILD_HOOK_URL` を POST → Workers Builds が `pnpm build` + デプロイ。
+
+## License
+
 MIT

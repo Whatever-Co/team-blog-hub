@@ -5,21 +5,13 @@ export const config = {
     description: "Whatever Co. Dev Team Blog",
   },
   siteRoot:
-    process.env.NODE_ENV === "production"
-      ? "https://whatever-dev-blog.vercel.app/"
-      : "http://localhost:3000",
+    process.env.SITE_ORIGIN ||
+    (process.env.NODE_ENV === "production"
+      ? "https://team-blog-hub.workers.dev"
+      : "http://localhost:3000"),
   headerLinks: [
-    {
-      title: "About",
-      href: "/about",
-    },
-    {
-      title: "Company",
-      href: "https://whatever.co",
-    },
-    {
-      title: "GitHub",
-      href: "https://github.com/Whatever-Co",
-    },
+    { title: "About", href: "/about" },
+    { title: "Members", href: "/members" },
+    { title: "RSS", href: "/feed.xml" },
   ],
 };
