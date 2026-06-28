@@ -86,4 +86,18 @@ export const members: Member[] = [
     githubUsername: "ubiquitous-o",
     twitterUsername: "ooo_ubi_ooo",
   },
+  {
+    id: "cellfusion",
+    name: "Makoto Matsutake",
+    role: "Engineer, Programmer",
+    bio: "",
+    avatarSrc: "/avatars/cellfusion.jpg",
+    sources: [
+      "https://zenn.dev/cellfusion/feed?include_scraps=1",
+      "https://qiita.com/cellfusion/feed",
+      "https://note.com/cellfusion/rss",
+    ],
+    twitterUsername: "cellfusion",
+    githubUsername: "cellfusion",
+  },
 ];
