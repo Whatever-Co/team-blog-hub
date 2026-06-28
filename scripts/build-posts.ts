@@ -15,6 +15,67 @@ export function extractSourceHost(url: string): string {
 
 type RawItem = { title?: string; link?: string; contentSnippet?: string; isoDate?: string };
 
+const QIITA_FEED_RE = /^https?:\/\/qiita\.com\/([^/?#]+)\/feed\/?$/;
+
+export function qiitaUserFromFeedUrl(url: string): string | null {
+  const m = url.match(QIITA_FEED_RE);
+  return m ? m[1] : null;
+}
+
+type QiitaApiItem = {
+  title?: string;
+  url?: string;
+  created_at?: string;
+  body?: string;
+  rendered_body?: string;
+};
+
+const QIITA_PER_PAGE = 100;
+const QIITA_MAX_PAGES = 10;
+const QIITA_FETCH_TIMEOUT_MS = 15_000;
+
+function qiitaSnippet(it: QiitaApiItem): string | undefined {
+  const source = it.rendered_body ?? it.body;
+  if (!source) return undefined;
+  return source.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().slice(0, 200) || undefined;
+}
+
+export async function fetchQiitaItems(user: string): Promise<RawItem[]> {
+  const collected: QiitaApiItem[] = [];
+
+  for (let page = 1; page <= QIITA_MAX_PAGES; page++) {
+    const res = await fetch(
+      `https://qiita.com/api/v2/users/${user}/items?per_page=${QIITA_PER_PAGE}&page=${page}`,
+      { signal: AbortSignal.timeout(QIITA_FETCH_TIMEOUT_MS) }
+    );
+    if (!res.ok) {
+      throw new Error(`Qiita API responded ${res.status} for user ${user} (page ${page})`);
+    }
+    const data: unknown = await res.json();
+    if (!Array.isArray(data)) {
+      throw new Error(`Qiita API returned non-array for user ${user} (page ${page})`);
+    }
+    collected.push(...(data as QiitaApiItem[]));
+    if (data.length < QIITA_PER_PAGE) break;
+    if (page === QIITA_MAX_PAGES) {
+      console.warn(
+        `[build-posts] Qiita user "${user}" hit pagination cap (${QIITA_MAX_PAGES} pages of ${QIITA_PER_PAGE}); older items may be omitted`
+      );
+    }
+  }
+
+  if (collected.length === 0) {
+    console.warn(`[build-posts] Qiita user "${user}" returned 0 items — verify handle is still valid`);
+  }
+
+  return collected.map((it) => ({
+    title: it.title,
+    link: it.url,
+    isoDate: it.created_at,
+    contentSnippet: qiitaSnippet(it),
+  }));
+}
+
 export function normalizeFeedItem(
   raw: RawItem,
   authorId: string,
@@ -61,15 +122,21 @@ async function fetchMember(member: Member, parser: Parser): Promise<{ items: Pos
   }
 
   for (const url of member.sources) {
-    let feed;
+    let rawItems: RawItem[];
+    const qiitaUser = qiitaUserFromFeedUrl(url);
     try {
-      feed = await parser.parseURL(url);
+      if (qiitaUser) {
+        rawItems = await fetchQiitaItems(qiitaUser);
+      } else {
+        const feed = await parser.parseURL(url);
+        rawItems = feed.items ?? [];
+      }
     } catch (err) {
       console.warn(`[build-posts] failed to fetch ${url}:`, (err as Error).message);
       failed.push(url);
       continue;
     }
-    for (const raw of feed.items ?? []) {
+    for (const raw of rawItems) {
       const norm = normalizeFeedItem(raw, member.id, member.name);
       if (norm) items.push(norm);
     }
