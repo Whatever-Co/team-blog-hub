@@ -15,6 +15,34 @@ export function extractSourceHost(url: string): string {
 
 type RawItem = { title?: string; link?: string; contentSnippet?: string; isoDate?: string };
 
+const QIITA_FEED_RE = /^https?:\/\/qiita\.com\/([^/?#]+)\/feed\/?$/;
+
+export function qiitaUserFromFeedUrl(url: string): string | null {
+  const m = url.match(QIITA_FEED_RE);
+  return m ? m[1] : null;
+}
+
+type QiitaApiItem = {
+  title?: string;
+  url?: string;
+  created_at?: string;
+  body?: string;
+};
+
+export async function fetchQiitaItems(user: string): Promise<RawItem[]> {
+  const res = await fetch(`https://qiita.com/api/v2/users/${user}/items?per_page=100`);
+  if (!res.ok) {
+    throw new Error(`Qiita API responded ${res.status} for user ${user}`);
+  }
+  const items = (await res.json()) as QiitaApiItem[];
+  return items.map((it) => ({
+    title: it.title,
+    link: it.url,
+    isoDate: it.created_at,
+    contentSnippet: it.body?.replace(/\s+/g, " ").trim().slice(0, 200),
+  }));
+}
+
 export function normalizeFeedItem(
   raw: RawItem,
   authorId: string,
@@ -61,15 +89,21 @@ async function fetchMember(member: Member, parser: Parser): Promise<{ items: Pos
   }
 
   for (const url of member.sources) {
-    let feed;
+    let rawItems: RawItem[];
+    const qiitaUser = qiitaUserFromFeedUrl(url);
     try {
-      feed = await parser.parseURL(url);
+      if (qiitaUser) {
+        rawItems = await fetchQiitaItems(qiitaUser);
+      } else {
+        const feed = await parser.parseURL(url);
+        rawItems = feed.items ?? [];
+      }
     } catch (err) {
       console.warn(`[build-posts] failed to fetch ${url}:`, (err as Error).message);
       failed.push(url);
       continue;
     }
-    for (const raw of feed.items ?? []) {
+    for (const raw of rawItems) {
       const norm = normalizeFeedItem(raw, member.id, member.name);
       if (norm) items.push(norm);
     }
