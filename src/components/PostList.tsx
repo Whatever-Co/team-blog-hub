@@ -57,7 +57,7 @@ export function PostList({ posts, members }: { posts: PostItem[]; members: Membe
         })}
       </div>
 
-      <div className="grid grid-cols-[92px_52px_1fr_110px] gap-[18px] pt-6 pb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
+      <div className="hidden sm:grid sm:grid-cols-[92px_52px_1fr_110px] gap-[18px] pt-6 pb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
         <span>Date</span><span></span><span>Title</span><span className="text-right">Author</span>
       </div>
 

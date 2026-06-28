@@ -25,7 +25,7 @@ export default async function MemberPage({ params }: { params: Promise<{ id: str
   return (
     <>
       <MemberProfileHeader member={member} postCount={posts.length} />
-      <div className="grid grid-cols-[92px_52px_1fr] gap-[18px] pt-6 pb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
+      <div className="hidden sm:grid sm:grid-cols-[92px_52px_1fr] gap-[18px] pt-6 pb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--color-text-muted)]">
         <span>Date</span><span></span><span>Title</span>
       </div>
       {posts.map((p) => <PostRow key={p.link} post={p} member={member} showAuthor={false} />)}
