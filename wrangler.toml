@@ -1,0 +1,17 @@
+name = "team-blog-hub"
+main = "src/worker/index.ts"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./out"
+binding = "ASSETS"
+not_found_handling = "404-page"
+
+[triggers]
+crons = ["0 17 * * *"]
+
+[vars]
+SITE_ORIGIN = "https://team-blog-hub.workers.dev"
+
+# BUILD_HOOK_URL is set via `wrangler secret put BUILD_HOOK_URL`
