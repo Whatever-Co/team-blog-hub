@@ -3,6 +3,7 @@
 # BUILD_HOOK_URL is a runtime secret (wrangler secret put BUILD_HOOK_URL).
 
 name = "team-blog-hub"
+account_id = "c21a10f70a8036d2ad10687ab83bfb4b"
 main = "src/worker/index.ts"
 compatibility_date = "2026-01-01"
 compatibility_flags = ["nodejs_compat"]
