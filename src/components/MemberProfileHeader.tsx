@@ -1,7 +1,73 @@
 import type { Member } from "@/types";
-import { FaGithub, FaTwitter, FaGlobe } from "react-icons/fa";
+import type { IconType } from "react-icons";
+import { FaGithub, FaGlobe } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SiZenn, SiQiita, SiNote } from "react-icons/si";
+
+type BlogPlatformKey = "zenn" | "qiita" | "note";
+
+type BlogPlatform = {
+  key: BlogPlatformKey;
+  label: string;
+  Icon: IconType;
+  match: RegExp;
+  profileUrl: (user: string) => string;
+};
+
+type BlogLink = {
+  key: BlogPlatformKey;
+  label: string;
+  href: string;
+  Icon: IconType;
+};
+
+const BLOG_PLATFORMS: readonly BlogPlatform[] = [
+  {
+    key: "zenn",
+    label: "Zenn",
+    Icon: SiZenn,
+    match: /^https?:\/\/zenn\.dev\/([^/]+)\//i,
+    profileUrl: (user) => `https://zenn.dev/${user}`,
+  },
+  {
+    key: "qiita",
+    label: "Qiita",
+    Icon: SiQiita,
+    match: /^https?:\/\/qiita\.com\/([^/]+)\//i,
+    profileUrl: (user) => `https://qiita.com/${user}`,
+  },
+  {
+    key: "note",
+    label: "note",
+    Icon: SiNote,
+    match: /^https?:\/\/note\.com\/([^/]+)\//i,
+    profileUrl: (user) => `https://note.com/${user}`,
+  },
+] as const;
+
+function detectBlogLinks(sources: string[] | undefined): BlogLink[] {
+  if (!sources?.length) return [];
+  const seen = new Set<BlogPlatformKey>();
+  const links: BlogLink[] = [];
+  for (const source of sources) {
+    for (const platform of BLOG_PLATFORMS) {
+      const user = source.match(platform.match)?.[1];
+      if (!user) continue;
+      if (seen.has(platform.key)) continue;
+      seen.add(platform.key);
+      links.push({
+        key: platform.key,
+        label: platform.label,
+        href: platform.profileUrl(user),
+        Icon: platform.Icon,
+      });
+    }
+  }
+  return links;
+}
 
 export function MemberProfileHeader({ member, postCount }: { member: Member; postCount: number }) {
+  const blogLinks = detectBlogLinks(member.sources);
   return (
     <section className="pt-16 pb-8 border-b border-[color:var(--color-rule-solid)]">
       <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
@@ -19,14 +85,19 @@ export function MemberProfileHeader({ member, postCount }: { member: Member; pos
           )}
           {member.bio && <p className="mt-4 text-[color:var(--color-text-muted)]">{member.bio}</p>}
           <div className="flex gap-4 mt-4 text-[color:var(--color-text-muted)]">
+            {blogLinks.map(({ key, label, href, Icon }) => (
+              <a key={key} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                <Icon size={18} />
+              </a>
+            ))}
             {member.githubUsername && (
               <a href={`https://github.com/${member.githubUsername}`} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <FaGithub size={18} />
               </a>
             )}
             {member.twitterUsername && (
-              <a href={`https://twitter.com/${member.twitterUsername}`} target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
-                <FaTwitter size={18} />
+              <a href={`https://x.com/${member.twitterUsername}`} target="_blank" rel="noopener noreferrer" aria-label="X">
+                <FaXTwitter size={18} />
               </a>
             )}
             {member.websiteUrl && (
