@@ -45,3 +45,7 @@ yarn-error.log*
 .superpowers/
 
 .dev.vars
+
+# local working dirs
+/.screenshots/
+/.serena/
