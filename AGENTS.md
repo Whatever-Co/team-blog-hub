@@ -68,7 +68,7 @@ team-blog-hub/
 ├─ members.ts                            # メンバー定義（trusted 入力、ハンドル＋RSS source 配列）
 ├─ site.config.ts                        # サイトメタ・ヘッダリンク。siteRoot は SITE_ORIGIN env 優先
 ├─ next.config.ts                        # output: 'export', trailingSlash: true, images.unoptimized
-├─ wrangler.toml                         # Worker name + account_id + [assets]./out + cron
+├─ wrangler.toml                         # Worker name + account_id + [assets]./out + cron + [[routes]] custom_domain
 ├─ postcss.config.mjs                    # @tailwindcss/postcss だけ
 ├─ vitest.config.ts                      # path alias を src/scripts と揃える
 ├─ tsconfig.json                         # strict、`src/worker` は exclude（wrangler が別管理）
