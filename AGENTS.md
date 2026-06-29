@@ -23,7 +23,7 @@ pnpm install
 pnpm build:posts                                   # RSS fetch（要ネット）
 pnpm test                                          # Vitest（23 tests）
 pnpm exec tsc --noEmit                             # 型チェック (= pnpm lint)
-SITE_ORIGIN=https://team-blog-hub.whatever-co.workers.dev pnpm build
+SITE_ORIGIN=https://dev-blog.whatever.co pnpm build
                                                    # 本番と同じ origin で静的 export
 xmllint --noout out/feed.xml out/feed.atom         # 生成フィードの XML 妥当性
 pnpm dev                                           # http://localhost:3000（要 build:posts 済）
@@ -50,16 +50,16 @@ gh pr view <N> --json mergeable,mergeStateStatus,statusCheckRollup
 |---|---|
 | Cloudflare account | Whatever Co. (`c21a10f70a8036d2ad10687ab83bfb4b`) |
 | Workers subdomain | `whatever-co.workers.dev` |
-| 本番 URL | https://team-blog-hub.whatever-co.workers.dev/ |
+| 本番 URL | https://dev-blog.whatever.co/ （Custom Domain）|
+| workers.dev URL | https://team-blog-hub.whatever-co.workers.dev/ （直アクセス可だが正規は Custom Domain）|
 | Worker name | `team-blog-hub` |
+| Custom Domain | `dev-blog.whatever.co`, zone `whatever.co` (`ff99342a00518a9e9d998af0828fd9e5`), Worker Domain ID `4bc78ed7922f45dee9260d29949752e7216c470b`、wrangler.toml `[[routes]] custom_domain=true` で declarative 管理 |
 | Deploy Hook | name `daily-rebuild`, branch `main`, ID `54995682-f4ab-4425-8a5f-6c0b34d299bb` |
 | Cron schedule | `0 17 * * *` UTC = 02:00 JST |
-| Build env var | `SITE_ORIGIN` (Workers Builds → Variables, **not** runtime) |
+| Build env var | `SITE_ORIGIN=https://dev-blog.whatever.co` (Workers Builds → Variables, **not** runtime)。未設定なら `site.config.ts` の prod fallback (`https://dev-blog.whatever.co`) を使う |
 | Runtime secret | `BUILD_HOOK_URL` (wrangler secret) |
 | GitHub remote (origin) | `git@github.com:Whatever-Co/team-blog-hub.git` |
 | GitHub remote (upstream, fetch only) | `git://github.com/catnose99/team-blog-hub.git`（元 fork） |
-
-カスタムドメイン（例: `dev-blog.whatever.co`）は未割当。割り当てるときは `SITE_ORIGIN` を更新して再デプロイ。
 
 ## ファイル構造
 
@@ -234,7 +234,6 @@ RSS feeds → scripts/build-posts.ts → .contents/posts.json
 
 ## 残タスク
 
-- カスタムドメイン割当（候補: `dev-blog.whatever.co`）→ Cloudflare で Custom Domain 設定 → `SITE_ORIGIN` を Workers Builds Variables で更新 → 再デプロイ
-- 旧 `whatever-dev-blog.vercel.app` から新ドメインへの 301 リダイレクト（Vercel 側で設定、または放置）
+- 旧 `whatever-dev-blog.vercel.app` から `https://dev-blog.whatever.co/` への 301 リダイレクト（Vercel 側で設定、または放置）
 - 翌日 02:00 JST 以降に Cloudflare ダッシュボード Settings > Build > Deploy Hooks の `daily-rebuild` の "Last triggered" を見て cron 動作確認
 - Lighthouse スコア未測定。デザイン spec の成功基準は 95+

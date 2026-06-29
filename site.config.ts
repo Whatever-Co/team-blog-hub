@@ -7,7 +7,7 @@ export const config = {
   siteRoot:
     process.env.SITE_ORIGIN ||
     (process.env.NODE_ENV === "production"
-      ? "https://team-blog-hub.workers.dev"
+      ? "https://dev-blog.whatever.co"
       : "http://localhost:3000"),
   headerLinks: [
     { title: "About", href: "/about" },
