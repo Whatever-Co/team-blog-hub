@@ -1,15 +1,27 @@
 import type { Member } from "@/types";
+import type { IconType } from "react-icons";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiZenn, SiQiita, SiNote } from "react-icons/si";
 
-const BLOG_PLATFORMS: Array<{
-  key: "zenn" | "qiita" | "note";
+type BlogPlatformKey = "zenn" | "qiita" | "note";
+
+type BlogPlatform = {
+  key: BlogPlatformKey;
   label: string;
-  Icon: typeof SiZenn;
+  Icon: IconType;
   match: RegExp;
   profileUrl: (user: string) => string;
-}> = [
+};
+
+type BlogLink = {
+  key: BlogPlatformKey;
+  label: string;
+  href: string;
+  Icon: IconType;
+};
+
+const BLOG_PLATFORMS: readonly BlogPlatform[] = [
   {
     key: "zenn",
     label: "Zenn",
@@ -31,22 +43,22 @@ const BLOG_PLATFORMS: Array<{
     match: /^https?:\/\/note\.com\/([^/]+)\//i,
     profileUrl: (user) => `https://note.com/${user}`,
   },
-];
+] as const;
 
-function detectBlogLinks(sources: string[] | undefined) {
+function detectBlogLinks(sources: string[] | undefined): BlogLink[] {
   if (!sources?.length) return [];
-  const seen = new Set<string>();
-  const links: Array<{ key: string; label: string; href: string; Icon: typeof SiZenn }> = [];
+  const seen = new Set<BlogPlatformKey>();
+  const links: BlogLink[] = [];
   for (const source of sources) {
     for (const platform of BLOG_PLATFORMS) {
-      const match = source.match(platform.match);
-      if (!match) continue;
+      const user = source.match(platform.match)?.[1];
+      if (!user) continue;
       if (seen.has(platform.key)) continue;
       seen.add(platform.key);
       links.push({
         key: platform.key,
         label: platform.label,
-        href: platform.profileUrl(match[1]),
+        href: platform.profileUrl(user),
         Icon: platform.Icon,
       });
     }
